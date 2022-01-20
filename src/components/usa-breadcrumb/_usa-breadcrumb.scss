@@ -1,3 +1,7 @@
+@use "sass:list";
+@use "sass:map";
+@use "../../stylesheets/packages/uswds-core";
+
 //
 // General Settings
 // =====================================
@@ -30,39 +34,39 @@ $icon-breadcrumb-back: (
 
 // Set default value for custom mixin exdent-icon()
 $breadcrumb-back-icon-aspect: (
-  map-get($icon-breadcrumb-back, "svg-width"),
-  map-get($icon-breadcrumb-back, "svg-height")
+  map.get($icon-breadcrumb-back, "svg-width"),
+  map.get($icon-breadcrumb-back, "svg-height")
 );
 
 // Defines spacing so back icon is optically placed
 @mixin exdent-icon($dim: $breadcrumb-back-icon-aspect) {
-  $aspect: nth($dim, 1) / nth($dim, 2);
+  $aspect: list.nth($dim, 1) / list.nth($dim, 2);
   $icon-width: $breadcrumb-icon-display-height * $aspect;
   padding-left: calc(#{$icon-width} + #{$breadcrumb-icon-spacing});
   text-indent: calc((#{$icon-width} + #{$breadcrumb-icon-spacing}) * -1);
 }
 
 .usa-breadcrumb {
-  @include typeset(
+  @include uswds-core.typeset(
     $theme-breadcrumb-font-family,
     $theme-breadcrumb-font-size,
     3
   );
-  @include set-text-and-bg(
+  @include uswds-core.set-text-and-bg(
     $theme-breadcrumb-background-color,
     $context: $breadcrumb-context
   );
-  @include u-padding-x($theme-breadcrumb-padding-x);
+  @include uswds-core.u-padding-x($theme-breadcrumb-padding-x);
 
-  @include at-media($theme-breadcrumb-min-width) {
-    @include u-padding-bottom($theme-breadcrumb-padding-bottom);
-    @include u-padding-top($theme-breadcrumb-padding-top);
+  @include uswds-core.at-media($theme-breadcrumb-min-width) {
+    @include uswds-core.u-padding-bottom($theme-breadcrumb-padding-bottom);
+    @include uswds-core.u-padding-top($theme-breadcrumb-padding-top);
   }
 
   &:not(.usa-breadcrumb--wrap) {
     .usa-breadcrumb__list {
-      @include at-media($theme-breadcrumb-min-width) {
-        @include u-white-space("no-wrap");
+      @include uswds-core.at-media($theme-breadcrumb-min-width) {
+        @include uswds-core.u-white-space("no-wrap");
         text-overflow: ellipsis;
         overflow: hidden;
       }
@@ -71,29 +75,29 @@ $breadcrumb-back-icon-aspect: (
 }
 
 .usa-breadcrumb__list {
-  @include unstyled-list;
-  @include u-display("block");
-  @include u-padding($theme-focus-width);
-  margin-left: units($theme-focus-width) * -1;
-  margin-right: units($theme-focus-width) * -1;
+  @include uswds-core.unstyled-list;
+  @include uswds-core.u-display("block");
+  @include uswds-core.u-padding($theme-focus-width);
+  margin-left: uswds-core.units($theme-focus-width) * -1;
+  margin-right: uswds-core.units($theme-focus-width) * -1;
 }
 
 .usa-breadcrumb__list-item {
-  @include sr-only;
-  @include u-display("inline");
-  @include u-white-space("no-wrap");
+  @include uswds-core.sr-only;
+  @include uswds-core.u-display("inline");
+  @include uswds-core.u-white-space("no-wrap");
 
-  @include at-media-max($theme-breadcrumb-min-width) {
-    @include u-white-space("wrap");
+  @include uswds-core.at-media-max($theme-breadcrumb-min-width) {
+    @include uswds-core.u-white-space("wrap");
 
     // If parent link only (mobile), only show parent of current link
     &:nth-last-child(2) {
-      @include not-sr-only;
+      @include uswds-core.not-sr-only;
 
       .usa-breadcrumb__link {
-        @include button-unstyled;
+        @include uswds-core.button-unstyled;
         @include exdent-icon;
-        @include place-icon(
+        @include uswds-core.place-icon(
           $icon-breadcrumb-back,
           "before",
           0,
@@ -102,15 +106,15 @@ $breadcrumb-back-icon-aspect: (
         );
 
         // Override link colors from button-unstyled()
-        @include set-link-from-bg(
+        @include uswds-core.set-link-from-bg(
           $theme-breadcrumb-background-color,
           $theme-breadcrumb-link-color,
           $context: $breadcrumb-context
         );
 
-        @include u-display("inline-block");
-        @include u-padding-bottom($theme-breadcrumb-padding-bottom);
-        @include u-padding-top($theme-breadcrumb-padding-top);
+        @include uswds-core.u-display("inline-block");
+        @include uswds-core.u-padding-bottom($theme-breadcrumb-padding-bottom);
+        @include uswds-core.u-padding-top($theme-breadcrumb-padding-top);
 
         &:before {
           bottom: $icon-vertical-spacer;
@@ -123,10 +127,10 @@ $breadcrumb-back-icon-aspect: (
         &,
         &:hover,
         &:active {
-          @include u-text("no-underline");
+          @include uswds-core.u-text("no-underline");
         }
         span {
-          @include u-text("underline");
+          @include uswds-core.u-text("underline");
         }
       }
 
@@ -137,12 +141,12 @@ $breadcrumb-back-icon-aspect: (
     }
   }
 
-  @include at-media($theme-breadcrumb-min-width) {
-    @include not-sr-only;
+  @include uswds-core.at-media($theme-breadcrumb-min-width) {
+    @include uswds-core.not-sr-only;
 
     // Breadcrumb separator ›
     &:not(:last-child) {
-      @include place-icon(
+      @include uswds-core.place-icon(
         $icon-breadcrumb-separator,
         "after",
         0,
@@ -164,18 +168,18 @@ $breadcrumb-back-icon-aspect: (
 }
 
 .usa-breadcrumb__link {
-  @include set-link-from-bg(
+  @include uswds-core.set-link-from-bg(
     $theme-breadcrumb-background-color,
     $theme-breadcrumb-link-color,
     $context: $breadcrumb-context
   );
-  @include u-display("inline");
+  @include uswds-core.u-display("inline");
 
   // Prevent underline that extends beyond text
-  @include u-text("no-underline");
+  @include uswds-core.u-text("no-underline");
 
   span {
-    @include u-text("underline");
+    @include uswds-core.u-text("underline");
   }
 }
 
@@ -185,11 +189,11 @@ $breadcrumb-back-icon-aspect: (
 
 // Breadcrumb wrap
 .usa-breadcrumb--wrap {
-  @include at-media($theme-breadcrumb-min-width) {
-    @include u-line-height($theme-breadcrumb-font-family, 4);
+  @include uswds-core.at-media($theme-breadcrumb-min-width) {
+    @include uswds-core.u-line-height($theme-breadcrumb-font-family, 4);
   }
 
   .usa-breadcrumb__list-item {
-    @include u-display("inline-block");
+    @include uswds-core.u-display("inline-block");
   }
 }

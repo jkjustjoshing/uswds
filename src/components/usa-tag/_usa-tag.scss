@@ -1,11 +1,13 @@
+@use "../../stylesheets/packages/uswds-core";
+
 .usa-tag {
-  @include border-box-sizing;
-  @include u-font("ui", "2xs");
-  @include u-text("white", "uppercase");
-  background-color: color("base-dark");
-  border-radius: radius("sm");
-  margin-right: units(0.5);
-  padding: units(1px) units(1);
+  @include uswds-core.border-box-sizing;
+  @include uswds-core.u-font("ui", "2xs");
+  @include uswds-core.u-text("white", "uppercase");
+  background-color: uswds-core.color("base-dark");
+  border-radius: uswds-core.radius("sm");
+  margin-right: uswds-core.units(0.5);
+  padding: uswds-core.units(1px) uswds-core.units(1);
 
   &:only-of-type {
     margin-right: 0;
@@ -13,6 +15,6 @@
 }
 
 .usa-tag--big {
-  @include u-padding-x(1);
-  @include u-font("ui", $theme-body-font-size);
+  @include uswds-core.u-padding-x(1);
+  @include uswds-core.u-font("ui", $theme-body-font-size);
 }

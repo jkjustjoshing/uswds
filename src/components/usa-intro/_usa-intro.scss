@@ -1,9 +1,11 @@
+@use "../../stylesheets/packages/uswds-core";
+
 .usa-intro {
-  @include typeset(
+  @include uswds-core.typeset(
     $theme-lead-font-family,
     $theme-lead-font-size,
     $theme-lead-line-height
   );
   font-weight: $theme-font-weight-normal;
-  max-width: measure($theme-lead-measure);
+  max-width: uswds-core.measure($theme-lead-measure);
 }

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA;;;;;;;EAOE;AACF,IAAI,CAAJ,cAAI;AACJ,IAAI,CAAJ,eAAI",
+    "sources": [
+        "has-important.scss"
+    ],
+    "names": [],
+    "file": "has-important.css"
+}

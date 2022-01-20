@@ -1,0 +1,48 @@
+/*
+----------------------------------------
+get-link-tokens-from-bg()
+----------------------------------------
+Get accessible link colors for a given
+background color
+returns: link-token, hover-token
+get-link-tokens-from-bg(
+  "black",
+  "red-60",
+  "red-10",
+  "AA")
+> "red-10", "red-5"
+get-link-tokens-from-bg(
+  "black",
+  "red-60v",
+  "red-10v",
+  "AA-large")
+> "red-60v", "red-50v"
+get-link-tokens-from-bg(
+  "black",
+  "red-5v",
+  "red-60v",
+  "AA")
+> "red-5v", "white"
+get-link-tokens-from-bg(
+  "black",
+  "white",
+  "red-60v",
+  "AA")
+> "white", "white"
+----------------------------------------
+*/
+@use "sass:list";
+@use "sass:map";
+@use "sass:math";
+@use "sass:meta";
+@use "../../settings" as *;
+@use "../../tokens/color" as *;
+@use "../general/get-default" as *;
+@use "../general/str-split" as *;
+@use "../general/remove" as *;
+@use "get-color-token-from-bg" as *;
+@use "calculate-grade" as *;
+@use "decompose-color-token" as *;
+@use "is-accessible-magic-number" as *;
+@use "next-token" as *;
+/*# sourceMappingURL=get-link-tokens-from-bg.css.map */

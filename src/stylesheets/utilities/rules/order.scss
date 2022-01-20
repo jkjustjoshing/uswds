@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 order
@@ -21,7 +23,7 @@ $u-order: (
   order: (
     base: "order",
     modifiers: null,
-    values: map-collect(get-palettes($order-palettes), $order-manual-values),
+    values: uswds-core.map-collect(uswds-core.get-palettes($order-palettes), $order-manual-values),
     settings: $order-settings,
     property: "order",
     type: "utility",

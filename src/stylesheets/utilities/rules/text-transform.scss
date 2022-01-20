@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 text-transform
@@ -19,8 +21,8 @@ $u-text-transform: (
     base: "text",
     modifiers: null,
     values:
-      map-collect(
-        get-palettes($text-transform-palettes),
+      uswds-core.map-collect(
+        uswds-core.get-palettes($text-transform-palettes),
         $text-transform-manual-values
       ),
     settings: $text-transform-settings,

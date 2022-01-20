@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 padding
@@ -35,7 +37,7 @@ $u-padding: (
       "bottom": "-bottom",
       "left": "-left",
     ),
-    values: map-collect(get-palettes($padding-palettes), $padding-manual-values),
+    values: uswds-core.map-collect(uswds-core.get-palettes($padding-palettes), $padding-manual-values),
     settings: $padding-settings,
     property: "padding",
     type: "utility",

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,IAAI,CAAJ,6CAAI",
+    "sources": [
+        "shortcodes-color-basic.scss"
+    ],
+    "names": [],
+    "file": "shortcodes-color-basic.css"
+}

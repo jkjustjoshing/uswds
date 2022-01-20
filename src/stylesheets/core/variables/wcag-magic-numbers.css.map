@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "wcag-magic-numbers.scss"
+    ],
+    "names": [],
+    "file": "wcag-magic-numbers.css"
+}

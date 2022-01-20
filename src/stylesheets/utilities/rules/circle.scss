@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 circle
@@ -21,7 +23,7 @@ $u-circle: (
   circle: (
     base: "circle",
     modifiers: null,
-    values: map-collect(get-palettes($circle-palettes), $circle-manual-values),
+    values: uswds-core.map-collect(uswds-core.get-palettes($circle-palettes), $circle-manual-values),
     settings: $circle-settings,
     property: (
       height,

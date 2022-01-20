@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 letter-spacing
@@ -19,8 +21,8 @@ $u-letter-spacing: (
     base: "text",
     modifiers: null,
     values:
-      map-collect(
-        get-palettes($letter-spacing-palettes),
+      uswds-core.map-collect(
+        uswds-core.get-palettes($letter-spacing-palettes),
         $letter-spacing-manual-values
       ),
     settings: $letter-spacing-settings,

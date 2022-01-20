@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 .left
@@ -20,7 +22,7 @@ $u-left: (
   left: (
     base: "left",
     modifiers: null,
-    values: map-collect(get-palettes($left-palettes), $left-manual-values),
+    values: uswds-core.map-collect(uswds-core.get-palettes($left-palettes), $left-manual-values),
     settings: $left-settings,
     property: "left",
     type: "utility",

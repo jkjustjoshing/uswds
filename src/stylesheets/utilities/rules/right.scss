@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 .right
@@ -20,7 +22,7 @@ $u-right: (
   right: (
     base: "right",
     modifiers: null,
-    values: map-collect(get-palettes($right-palettes), $right-manual-values),
+    values: uswds-core.map-collect(uswds-core.get-palettes($right-palettes), $right-manual-values),
     settings: $right-settings,
     property: "right",
     type: "utility",

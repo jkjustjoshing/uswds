@@ -1,0 +1,12 @@
+/*
+----------------------------------------
+color-token-type()
+----------------------------------------
+Returns the type of a color token.
+Returns: "system" | "theme"
+----------------------------------------
+*/
+@use "../general/error-not-token" as *;
+@use "is-system-color-token" as *;
+@use "is-theme-color-token" as *;
+/*# sourceMappingURL=color-token-type.css.map */

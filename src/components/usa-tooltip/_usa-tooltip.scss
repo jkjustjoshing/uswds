@@ -1,3 +1,5 @@
+@use "../../stylesheets/packages/uswds-core";
+
 // Variables
 $triangle-size: 5px;
 
@@ -19,12 +21,12 @@ $triangle-size: 5px;
 .usa-tooltip__body,
 .usa-tooltip__body--top {
   transition: opacity 0.08s ease-in-out;
-  background-color: color($theme-tooltip-background-color);
-  border-radius: radius($theme-button-border-radius);
-  color: color($theme-tooltip-font-color);
+  background-color: uswds-core.color($theme-tooltip-background-color);
+  border-radius: uswds-core.radius($theme-button-border-radius);
+  color: uswds-core.color($theme-tooltip-font-color);
   display: none;
-  font-size: size("ui", $theme-tooltip-font-size);
-  padding: units(1);
+  font-size: uswds-core.size("ui", $theme-tooltip-font-size);
+  padding: uswds-core.units(1);
   pointer-events: none;
   width: auto;
   white-space: pre;
@@ -40,7 +42,7 @@ $triangle-size: 5px;
     pointer-events: none;
     border-left: $triangle-size solid transparent;
     border-right: $triangle-size solid transparent;
-    border-top: $triangle-size solid color($theme-tooltip-background-color);
+    border-top: $triangle-size solid uswds-core.color($theme-tooltip-background-color);
     position: absolute;
     bottom: -$triangle-size;
     left: 50%;
@@ -67,7 +69,7 @@ $triangle-size: 5px;
   &:after {
     border-left: $triangle-size solid transparent;
     border-right: $triangle-size solid transparent;
-    border-bottom: $triangle-size solid color($theme-tooltip-background-color);
+    border-bottom: $triangle-size solid uswds-core.color($theme-tooltip-background-color);
     border-top: 0;
     bottom: auto;
     top: -$triangle-size;
@@ -78,7 +80,7 @@ $triangle-size: 5px;
   &:after {
     border-top: $triangle-size solid transparent;
     border-bottom: $triangle-size solid transparent;
-    border-right: $triangle-size solid color($theme-tooltip-background-color);
+    border-right: $triangle-size solid uswds-core.color($theme-tooltip-background-color);
     border-left: 0;
     right: auto;
     top: 50%;
@@ -92,7 +94,7 @@ $triangle-size: 5px;
   &:after {
     border-top: $triangle-size solid transparent;
     border-bottom: $triangle-size solid transparent;
-    border-left: $triangle-size solid color($theme-tooltip-background-color);
+    border-left: $triangle-size solid uswds-core.color($theme-tooltip-background-color);
     border-right: 0;
     right: -$triangle-size;
     top: 50%;

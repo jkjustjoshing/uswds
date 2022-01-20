@@ -1,8 +1,10 @@
+@use "../../stylesheets/packages/uswds-core";
+
 .usa-textarea {
   @extend %block-input-general;
   @extend %block-input-styles;
 }
 
 .usa-textarea {
-  height: units("card");
+  height: uswds-core.units("card");
 }

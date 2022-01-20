@@ -1,3 +1,5 @@
+@use "../../stylesheets/packages/uswds-core";
+
 .usa-list {
   @extend %usa-list;
 
@@ -7,8 +9,8 @@
 }
 
 // Unstyled lists
-@include override-prose {
+@include uswds-core.override-prose {
   .usa-list--unstyled {
-    @include unstyled-list;
+    @include uswds-core.unstyled-list;
   }
 }

@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 SQUARE
@@ -25,7 +27,7 @@ $u-square: (
         width,
       ),
     ),
-    values: map-collect(get-palettes($square-palettes), $square-manual-values),
+    values: uswds-core.map-collect(uswds-core.get-palettes($square-palettes), $square-manual-values),
     settings: $square-settings,
     property: "",
     type: "utility",

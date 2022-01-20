@@ -1,25 +1,27 @@
+@use "../packages/uswds-core";
+
 html {
-  @include add-kerning;
-  font-family: font-family($theme-body-font-family);
-  font-size: $root-font-size;
+  @include uswds-core.add-kerning;
+  font-family: uswds-core.font-family($theme-body-font-family);
+  font-size: uswds-core.$root-font-size;
 }
 
 @if $theme-style-body-element {
   body {
-    @include typeset;
+    @include uswds-core.typeset;
   }
 }
 
 @if $theme-global-paragraph-styles == true {
-  @include usa-paragraph-style;
+  @include uswds-core.usa-paragraph-style;
 }
 
 @if $theme-global-link-styles == true {
-  @include usa-link-style;
+  @include uswds-core.usa-link-style;
 }
 
 @if $theme-global-content-styles == true {
-  @include usa-content-styles;
+  @include uswds-core.usa-content-styles;
 }
 
 // Remove user agent styles

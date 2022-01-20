@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 .justify-content
@@ -21,8 +23,8 @@ $u-justify-content: (
     base: "flex",
     modifiers: null,
     values:
-      map-collect(
-        get-palettes($justify-content-palettes),
+      uswds-core.map-collect(
+        uswds-core.get-palettes($justify-content-palettes),
         $justify-content-manual-values
       ),
     settings: $justify-content-settings,

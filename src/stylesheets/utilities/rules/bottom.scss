@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 .bottom
@@ -20,7 +22,7 @@ $u-bottom: (
   bottom: (
     base: "bottom",
     modifiers: null,
-    values: map-collect(get-palettes($bottom-palettes), $bottom-manual-values),
+    values: uswds-core.map-collect(uswds-core.get-palettes($bottom-palettes), $bottom-manual-values),
     settings: $bottom-settings,
     property: "bottom",
     type: "utility",

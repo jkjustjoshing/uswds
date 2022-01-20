@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 position
@@ -19,7 +21,7 @@ $u-position: (
     base: "position",
     modifiers: null,
     values:
-      map-collect(get-palettes($position-palettes), $position-manual-values),
+      uswds-core.map-collect(uswds-core.get-palettes($position-palettes), $position-manual-values),
     settings: $position-settings,
     property: "position",
     type: "utility",

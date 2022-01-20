@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 font-feature-settings
@@ -20,8 +22,8 @@ $u-font-feature: (
     base: "text",
     modifiers: null,
     values:
-      map-collect(
-        get-palettes($font-feature-palettes),
+      uswds-core.map-collect(
+        uswds-core.get-palettes($font-feature-palettes),
         $font-feature-manual-values
       ),
     settings: $font-feature-settings,

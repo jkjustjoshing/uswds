@@ -1,3 +1,5 @@
+@use "../../stylesheets/packages/uswds-core";
+
 $aspect-height: 9;
 $aspect-width: 16;
 
@@ -14,7 +16,7 @@ $aspect-width: 16;
 }
 
 .usa-embed-container {
-  @include embed-container($aspect-height, $aspect-width);
+  @include uswds-core.embed-container($aspect-height, $aspect-width);
   position: relative;
   height: 0;
   overflow: hidden;

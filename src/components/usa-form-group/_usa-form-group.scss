@@ -1,5 +1,7 @@
+@use "../../stylesheets/packages/uswds-core";
+
 .usa-form-group {
-  margin-top: units(3);
+  margin-top: uswds-core.units(3);
 
   // Let form-group handle top margin
   .usa-label:first-child {
@@ -9,12 +11,12 @@
 
 // Block input elements
 .usa-form-group--error {
-  @include u-border-left(0.5, "error-dark");
-  margin-top: units(4);
-  padding-left: units(2);
+  @include uswds-core.u-border-left(0.5, "error-dark");
+  margin-top: uswds-core.units(4);
+  padding-left: uswds-core.units(2);
   position: relative;
 
-  @include at-media("desktop") {
-    margin-left: units(-2.5);
+  @include uswds-core.at-media("desktop") {
+    margin-left: uswds-core.units(-2.5);
   }
 }

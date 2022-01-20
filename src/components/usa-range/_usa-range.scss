@@ -1,29 +1,31 @@
+@use "../../stylesheets/packages/uswds-core";
+
 @mixin range-focus {
-  background-color: color("white");
-  box-shadow: 0 0 0 units(2px) color($theme-focus-color);
+  background-color: uswds-core.color("white");
+  box-shadow: 0 0 0 uswds-core.units(2px) uswds-core.color($theme-focus-color);
 }
 
 @mixin range-track {
-  background-color: color("base-lightest");
-  border-radius: radius("pill");
-  border: units(1px) solid color("base");
+  background-color: uswds-core.color("base-lightest");
+  border-radius: uswds-core.radius("pill");
+  border: uswds-core.units(1px) solid uswds-core.color("base");
   cursor: pointer;
-  height: units(2);
+  height: uswds-core.units(2);
   width: 100%;
 }
 
 @mixin range-thumb {
-  @include u-circle($theme-input-select-size);
-  background: color("base-lightest");
+  @include uswds-core.u-circle($theme-input-select-size);
+  background: uswds-core.color("base-lightest");
   border: none;
-  box-shadow: 0 0 0 units($theme-input-select-border-width) color("base");
+  box-shadow: 0 0 0 uswds-core.units($theme-input-select-border-width) uswds-core.color("base");
   cursor: pointer;
 }
 
 @mixin range-ms-fill {
-  background-color: color("base-lightest");
-  border-radius: radius("pill");
-  border: units(1px) solid color("base");
+  background-color: uswds-core.color("base-lightest");
+  border-radius: uswds-core.radius("pill");
+  border: uswds-core.units(1px) solid uswds-core.color("base");
 }
 
 .usa-range {
@@ -68,7 +70,7 @@
   &::-webkit-slider-thumb {
     @include range-thumb;
     appearance: none;
-    margin-top: px-to-rem(-3px); // magic number
+    margin-top: uswds-core.px-to-rem(-3px); // magic number
   }
 
   &::-moz-range-thumb {

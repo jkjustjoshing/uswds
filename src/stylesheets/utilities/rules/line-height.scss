@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 line-height
@@ -19,8 +21,8 @@ $u-line-height: (
     base: "line-height",
     modifiers: null,
     values:
-      map-collect(
-        get-palettes($line-height-palettes),
+      uswds-core.map-collect(
+        uswds-core.get-palettes($line-height-palettes),
         $line-height-manual-values
       ),
     settings: $line-height-settings,

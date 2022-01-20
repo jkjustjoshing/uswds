@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "color-theme-grades.scss"
+    ],
+    "names": [],
+    "file": "color-theme-grades.css"
+}

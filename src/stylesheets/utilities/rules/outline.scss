@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 outline
@@ -20,7 +22,7 @@ $u-outline: (
   outline: (
     base: "outline",
     modifiers: null,
-    values: map-collect(get-palettes($outline-palettes), $outline-manual-values),
+    values: uswds-core.map-collect(uswds-core.get-palettes($outline-palettes), $outline-manual-values),
     settings: $outline-settings,
     valuePrepend: null,
     valueAppend: " solid",

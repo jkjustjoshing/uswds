@@ -1,7 +1,9 @@
+@use "../packages/uswds-core";
+
 img {
   max-width: 100%;
 }
 
 .usa-media-link {
-  @include media-link;
+  @include uswds-core.media-link;
 }

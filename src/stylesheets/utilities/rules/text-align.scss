@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 text-align
@@ -19,7 +21,7 @@ $u-text-align: (
     base: "text",
     modifiers: null,
     values:
-      map-collect(get-palettes($text-align-palettes), $text-align-manual-values),
+      uswds-core.map-collect(uswds-core.get-palettes($text-align-palettes), $text-align-manual-values),
     settings: $text-align-settings,
     property: "text-align",
     type: "utility",

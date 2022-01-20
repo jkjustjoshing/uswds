@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 background-color
@@ -20,10 +22,10 @@ $u-border-color: (
     base: "border",
     modifiers: null,
     values:
-      map-collect(
-        $tokens-color-global,
-        get-palettes($border-color-palettes),
-        get-palettes($global-color-palettes),
+      uswds-core.map-collect(
+        uswds-core.$tokens-color-global,
+        uswds-core.get-palettes($border-color-palettes),
+        uswds-core.get-palettes($global-color-palettes),
         $border-color-manual-values
       ),
     settings: $border-color-settings,

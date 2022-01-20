@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 text-decoration
@@ -19,8 +21,8 @@ $u-text-decoration: (
     base: "text",
     modifiers: null,
     values:
-      map-collect(
-        get-palettes($text-decoration-palettes),
+      uswds-core.map-collect(
+        uswds-core.get-palettes($text-decoration-palettes),
         $text-decoration-manual-values
       ),
     settings: $text-decoration-settings,

@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "../../stylesheets/packages/uswds-core";
+
 // Variables
 
 // Size icons based on the theme-type-scale-[size] number and this factor
@@ -19,22 +22,22 @@ $theme-body-font-sizes: (
   "3xl": $theme-type-scale-3xl,
 );
 
-$type-scale: font-size($theme-icon-list-font-family, $theme-body-font-size);
+$type-scale: uswds-core.font-size($theme-icon-list-font-family, $theme-body-font-size);
 
 // Get fixed size for icon, based on non-normalized size token
 $this-system-token: if(
-  map-has-key($theme-body-font-sizes, $theme-body-font-size),
-  map-get($theme-body-font-sizes, $theme-body-font-size),
+  map.has-key($theme-body-font-sizes, $theme-body-font-size),
+  map.get($theme-body-font-sizes, $theme-body-font-size),
   $theme-body-font-size
 );
-$this-icon-size-px: map-get($system-type-scale, $this-system-token);
-$icon-size: px-to-rem($this-icon-size-px);
+$this-icon-size-px: map.get(uswds-core.$system-type-scale, $this-system-token);
+$icon-size: uswds-core.px-to-rem($this-icon-size-px);
 
-@include override-prose {
+@include uswds-core.override-prose {
   .usa-icon-list {
-    @include typeset($theme-icon-list-font-family, $theme-body-font-size);
-    @include unstyled-list;
-    @include u-measure(5);
+    @include uswds-core.typeset($theme-icon-list-font-family, $theme-body-font-size);
+    @include uswds-core.unstyled-list;
+    @include uswds-core.u-measure(5);
   }
 
   .usa-icon-list__item {
@@ -42,20 +45,20 @@ $icon-size: px-to-rem($this-icon-size-px);
     position: relative;
 
     & + .usa-icon-list__item {
-      padding-top: units(1.5);
+      padding-top: uswds-core.units(1.5);
     }
   }
 }
 
 // Allow setting icon color on the icon-list element
 .usa-icon-list {
-  @each $color, $grades in $all-project-colors {
+  @each $color, $grades in uswds-core.$all-project-colors {
     @each $grade, $value in $grades {
       @if $value {
         $prefix: if($grade != "default", #{$color}-#{$grade}, #{$color});
         &--#{$prefix} {
           .usa-icon-list__icon {
-            color: color($prefix);
+            color: uswds-core.color($prefix);
           }
         }
       }
@@ -80,13 +83,13 @@ $icon-size: px-to-rem($this-icon-size-px);
   > p,
   > ul,
   > ol {
-    @include u-font($theme-icon-list-font-family, $theme-body-font-size);
-    @include u-measure(5);
+    @include uswds-core.u-font($theme-icon-list-font-family, $theme-body-font-size);
+    @include uswds-core.u-measure(5);
   }
 }
 
 .usa-icon-list[class*="usa-icon-list--size-"] {
-  @include u-measure("none");
+  @include uswds-core.u-measure("none");
 }
 
 // Generate responsive variants
@@ -94,7 +97,7 @@ $icon-size: px-to-rem($this-icon-size-px);
 $this-null: (
   "none": null,
 );
-$icon-list-breakpoints: map-merge($this-null, $system-breakpoints);
+$icon-list-breakpoints: map.merge($this-null, uswds-core.$system-breakpoints);
 @each $mq-key, $mq-value in $icon-list-breakpoints {
   // Set the prefix
   // An empty string if "none"
@@ -103,14 +106,14 @@ $icon-list-breakpoints: map-merge($this-null, $system-breakpoints);
     $prefix: "";
   }
   // Or the standard prefix if the breakpoint is output
-  @else if map-get($theme-utility-breakpoints, $mq-key) {
-    $prefix: "#{$mq-key}#{$separator}";
+  @else if map.get($theme-utility-breakpoints, $mq-key) {
+    $prefix: "#{$mq-key}#{uswds-core.$separator}";
   }
 
-  @include at-media($mq-key) {
+  @include uswds-core.at-media($mq-key) {
     @each $token, $val in $theme-body-font-sizes {
       @if $prefix {
-        $this-type-scale: font-size($theme-icon-list-font-family, $token);
+        $this-type-scale: uswds-core.font-size($theme-icon-list-font-family, $token);
         .#{$prefix}usa-icon-list--size-#{$token} {
           .usa-icon-list__icon {
             .usa-icon {
@@ -121,15 +124,15 @@ $icon-list-breakpoints: map-merge($this-null, $system-breakpoints);
           }
 
           .usa-icon-list__content {
-            @include u-measure(5);
+            @include uswds-core.u-measure(5);
             // Resize simple (un-marked up) content
-            font-size: size($theme-icon-list-font-family, $token);
+            font-size: uswds-core.size($theme-icon-list-font-family, $token);
             // Calculate the space between the icon and content based on the size variant and factor
             padding-left: $this-type-scale *
               $icon-list-icon-padding-left-factor;
 
             .usa-icon-list__title {
-              @include u-font($theme-icon-list-title-font-family, $token);
+              @include uswds-core.u-font($theme-icon-list-title-font-family, $token);
             }
           }
         }
@@ -139,15 +142,15 @@ $icon-list-breakpoints: map-merge($this-null, $system-breakpoints);
 }
 
 .usa-icon-list__title {
-  @include typeset(
+  @include uswds-core.typeset(
     $theme-icon-list-title-font-family,
     $theme-body-font-size,
     2
   );
-  margin-bottom: units(0);
+  margin-bottom: uswds-core.units(0);
   padding-top: $icon-list-title-padding-top;
   & + * {
-    margin-top: units(1);
+    margin-top: uswds-core.units(1);
   }
 }
 

@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 flex-wrap
@@ -19,7 +21,7 @@ $u-flex-wrap: (
     base: "flex",
     modifiers: null,
     values:
-      map-collect(get-palettes($flex-wrap-palettes), $flex-wrap-manual-values),
+      uswds-core.map-collect(uswds-core.get-palettes($flex-wrap-palettes), $flex-wrap-manual-values),
     settings: $flex-wrap-settings,
     property: "flex-wrap",
     type: "utility",

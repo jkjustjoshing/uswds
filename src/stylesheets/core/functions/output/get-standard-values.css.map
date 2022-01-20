@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,IAAI,CAAJ,2CAAI;AACJ,IAAI,CAAJ,uBAAI;AAEJ;;;;;;;EAOE",
+    "sources": [
+        "get-standard-values.scss"
+    ],
+    "names": [],
+    "file": "get-standard-values.css"
+}

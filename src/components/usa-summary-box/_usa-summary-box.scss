@@ -1,17 +1,20 @@
+@use "sass:list";
+@use "../../stylesheets/packages/uswds-core";
+
 $summary-box-context: "Summary Box";
 
 .usa-summary-box {
-  @include typeset($theme-summary-box-font-family);
-  @include border-box-sizing;
-  @include set-text-and-bg(
+  @include uswds-core.typeset($theme-summary-box-font-family);
+  @include uswds-core.border-box-sizing;
+  @include uswds-core.set-text-and-bg(
     $theme-summary-box-background-color,
     $theme-summary-box-text-color,
     $context: $summary-box-context
   );
-  @include u-radius($theme-summary-box-border-radius);
-  border: $theme-summary-box-border-width color($theme-summary-box-border-color)
+  @include uswds-core.u-radius($theme-summary-box-border-radius);
+  border: $theme-summary-box-border-width uswds-core.color($theme-summary-box-border-color)
     solid;
-  padding: units(3);
+  padding: uswds-core.units(3);
   position: relative;
 
   .usa-list {
@@ -21,42 +24,42 @@ $summary-box-context: "Summary Box";
   }
 
   * + & {
-    margin-top: units(2);
+    margin-top: uswds-core.units(2);
   }
 }
 
 .usa-summary-box__heading {
-  @include typeset($theme-summary-box-font-family, "lg", 2);
+  @include uswds-core.typeset($theme-summary-box-font-family, "lg", 2);
   margin-top: 0;
-  margin-bottom: units(1);
+  margin-bottom: uswds-core.units(1);
 }
 
 .usa-summary-box__text {
-  @include u-margin-y(0);
+  @include uswds-core.u-margin-y(0);
 }
 
 .usa-summary-box__text:only-child {
   margin-bottom: $theme-summary-box-border-width;
-  padding-top: units(0.5);
+  padding-top: uswds-core.units(0.5);
 }
 
 .usa-summary-box__link {
-  @include set-link-from-bg(
+  @include uswds-core.set-link-from-bg(
     $theme-summary-box-background-color,
     $theme-summary-box-link-color,
     $context: $summary-box-context
   );
   &[href^="#"] {
-    $link-tokens: get-link-tokens-from-bg(
+    $link-tokens: uswds-core.get-link-tokens-from-bg(
       $theme-summary-box-background-color,
       $theme-summary-box-link-color,
       $context: $summary-box-context
     );
     &:visited {
-      color: color(nth($link-tokens, 1));
+      color: uswds-core.color(list.nth($link-tokens, 1));
     }
     &:hover {
-      color: color(nth($link-tokens, 2));
+      color: uswds-core.color(list.nth($link-tokens, 2));
     }
   }
 }

@@ -1,19 +1,21 @@
+@use "../../stylesheets/packages/uswds-core";
+
 .usa-sidenav {
-  @include border-box-sizing;
-  @include nav-list("sidenav");
-  @include typeset($theme-sidenav-font-family, "sm", 3);
-  border-bottom: units(1px) solid color("base-lighter");
+  @include uswds-core.border-box-sizing;
+  @include uswds-core.nav-list("sidenav");
+  @include uswds-core.typeset($theme-sidenav-font-family, "sm", 3);
+  border-bottom: uswds-core.units(1px) solid uswds-core.color("base-lighter");
 
   .grid-container & {
-    @include u-margin-x(-$theme-site-margins-mobile-width);
+    @include uswds-core.u-margin-x(-$theme-site-margins-mobile-width);
 
-    @include at-media("tablet") {
-      @include u-margin-x(0);
+    @include uswds-core.at-media("tablet") {
+      @include uswds-core.u-margin-x(0);
     }
   }
 }
 
 .usa-sidenav__sublist {
-  @include nav-sublist;
-  font-size: font-size($theme-sidenav-font-family, "xs");
+  @include uswds-core.nav-sublist;
+  font-size: uswds-core.font-size($theme-sidenav-font-family, "xs");
 }

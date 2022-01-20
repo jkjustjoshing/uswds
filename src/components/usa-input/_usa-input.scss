@@ -1,8 +1,10 @@
+@use "../../stylesheets/packages/uswds-core";
+
 .usa-input {
   @extend %block-input-general;
   @extend %block-input-styles;
 }
 
 .usa-input--error {
-  @include u-border($theme-input-state-border-width, "error-dark");
+  @include uswds-core.u-border($theme-input-state-border-width, "error-dark");
 }

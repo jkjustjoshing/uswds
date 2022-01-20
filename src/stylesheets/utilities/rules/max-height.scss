@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 max-height
@@ -19,7 +21,7 @@ $u-max-height: (
     base: "maxh",
     modifiers: null,
     values:
-      map-collect(get-palettes($max-height-palettes), $max-height-manual-values),
+      uswds-core.map-collect(uswds-core.get-palettes($max-height-palettes), $max-height-manual-values),
     settings: $max-height-settings,
     property: "max-height",
     type: "utility",

@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 border-width
@@ -33,8 +35,8 @@ $u-border-width: (
       "left-width": "-left-width",
     ),
     values:
-      map-collect(
-        get-palettes($border-width-palettes),
+      uswds-core.map-collect(
+        uswds-core.get-palettes($border-width-palettes),
         $border-width-manual-values
       ),
     settings: $border-width-settings,

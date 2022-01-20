@@ -1,17 +1,19 @@
+@use "../../stylesheets/packages/uswds-core";
+
 .usa-legend {
-  @include typeset(
+  @include uswds-core.typeset(
     $theme-form-font-family,
     $theme-body-font-size,
     $theme-input-line-height
   );
   display: block;
-  font-weight: font-weight("normal");
-  margin-top: units(3);
-  max-width: units($theme-input-max-width);
+  font-weight: uswds-core.font-weight("normal");
+  margin-top: uswds-core.units(3);
+  max-width: uswds-core.units($theme-input-max-width);
 }
 
 .usa-legend--large {
-  font-size: font-size($theme-form-font-family, "xl");
-  font-weight: font-weight("bold");
-  margin-top: units(2);
+  font-size: uswds-core.font-size($theme-form-font-family, "xl");
+  font-weight: uswds-core.font-weight("bold");
+  margin-top: uswds-core.units(2);
 }

@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 font-weight
@@ -19,8 +21,8 @@ $u-font-weight: (
     base: "text",
     modifiers: null,
     values:
-      map-collect(
-        get-palettes($font-weight-palettes),
+      uswds-core.map-collect(
+        uswds-core.get-palettes($font-weight-palettes),
         $font-weight-manual-values
       ),
     settings: $font-weight-settings,

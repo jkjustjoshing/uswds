@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 color
@@ -19,10 +21,10 @@ $u-color: (
     base: "text",
     modifiers: null,
     values:
-      map-collect(
-        $tokens-color-global,
-        get-palettes($color-palettes),
-        get-palettes($global-color-palettes),
+      uswds-core.map-collect(
+        uswds-core.$tokens-color-global,
+        uswds-core.get-palettes($color-palettes),
+        uswds-core.get-palettes($global-color-palettes),
         $color-manual-values
       ),
     settings: $color-settings,

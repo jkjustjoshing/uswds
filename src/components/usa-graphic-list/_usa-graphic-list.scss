@@ -1,21 +1,23 @@
+@use "../../stylesheets/packages/uswds-core";
+
 // A collection of media block objects
 
 .usa-graphic-list {
-  @include typeset;
-  @include border-box-sizing;
+  @include uswds-core.typeset;
+  @include uswds-core.border-box-sizing;
 
   .usa-graphic-list__row {
     .usa-media-block {
-      margin-bottom: units(4);
+      margin-bottom: uswds-core.units(4);
 
-      @include at-media("tablet") {
-        margin-bottom: units(8);
+      @include uswds-core.at-media("tablet") {
+        margin-bottom: uswds-core.units(8);
       }
     }
 
     &:last-child {
       .usa-media-block {
-        @include at-media("tablet") {
+        @include uswds-core.at-media("tablet") {
           margin-bottom: 0;
         }
 
@@ -27,7 +29,7 @@
   }
 
   .usa-media-block__img {
-    margin-right: units(3);
+    margin-right: uswds-core.units(3);
   }
 
   .usa-media-block__body {
@@ -38,5 +40,5 @@
 }
 
 .usa-graphic-list__heading {
-  @include typeset-h3;
+  @include uswds-core.typeset-h3;
 }

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA;;;;;;;;;;;;EAYE;AAEF,IAAI,CAAJ,mBAAI;AACJ,IAAI,CAAJ,wBAAI",
+    "sources": [
+        "is-accessible-magic-number.scss"
+    ],
+    "names": [],
+    "file": "is-accessible-magic-number.css"
+}

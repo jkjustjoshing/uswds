@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 text-decoration-color
@@ -19,9 +21,9 @@ $u-text-decoration-color: (
     base: "underline",
     modifiers: null,
     values:
-      map-collect(
-        get-palettes($text-decoration-color-palettes),
-        get-palettes($global-color-palettes),
+      uswds-core.map-collect(
+        uswds-core.get-palettes($text-decoration-color-palettes),
+        uswds-core.get-palettes($global-color-palettes),
         $text-decoration-color-manual-values
       ),
     settings: $text-decoration-color-settings,

@@ -1,6 +1,8 @@
+@use "../../stylesheets/packages/uswds-core";
+
 .usa-error-message {
-  @include u-padding-y(0.5);
-  color: color("error-dark");
+  @include uswds-core.u-padding-y(0.5);
+  color: uswds-core.color("error-dark");
   display: block;
-  font-weight: font-weight("bold");
+  font-weight: uswds-core.font-weight("bold");
 }

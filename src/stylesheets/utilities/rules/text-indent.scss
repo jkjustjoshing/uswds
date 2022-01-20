@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 text-indent
@@ -19,8 +21,8 @@ $u-text-indent: (
     base: "text-indent",
     modifiers: null,
     values:
-      map-collect(
-        get-palettes($text-indent-palettes),
+      uswds-core.map-collect(
+        uswds-core.get-palettes($text-indent-palettes),
         $text-indent-manual-values
       ),
     settings: $text-indent-settings,

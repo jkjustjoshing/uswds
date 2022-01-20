@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 align-self
@@ -19,7 +21,7 @@ $u-align-self: (
     base: "flex",
     modifiers: null,
     values:
-      map-collect(get-palettes($align-self-palettes), $align-self-manual-values),
+      uswds-core.map-collect(uswds-core.get-palettes($align-self-palettes), $align-self-manual-values),
     settings: $align-self-settings,
     property: "align-self",
     type: "utility",

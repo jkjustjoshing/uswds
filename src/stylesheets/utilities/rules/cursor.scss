@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 color
@@ -18,7 +20,7 @@ $u-cursor: (
   cursor: (
     base: "cursor",
     modifiers: null,
-    values: map-collect(get-palettes($cursor-palettes), $cursor-manual-values),
+    values: uswds-core.map-collect(uswds-core.get-palettes($cursor-palettes), $cursor-manual-values),
     settings: $cursor-settings,
     property: "cursor",
     type: "utility",

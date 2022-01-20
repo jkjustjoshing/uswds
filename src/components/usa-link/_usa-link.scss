@@ -1,5 +1,7 @@
+@use "../../stylesheets/packages/uswds-core";
+
 .usa-link {
-  @include typeset-link;
+  @include uswds-core.typeset-link;
 }
 
 // External link consider 'effortless style approach':
@@ -7,9 +9,9 @@
 // [href^='https:']:not([href*='my-domain.com'])
 
 .usa-link--external {
-  @include external-link();
+  @include uswds-core.external-link();
 
   &.usa-link--alt {
-    @include external-link($contrast-bg: "base-darker");
+    @include uswds-core.external-link($contrast-bg: "base-darker");
   }
 }

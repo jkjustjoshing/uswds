@@ -1,11 +1,13 @@
+@use "../../stylesheets/packages/uswds-core";
+
 // Variables
-$accordion-border: units($theme-accordion-border-width) solid
-  color($theme-accordion-border-color);
+$accordion-border: uswds-core.units($theme-accordion-border-width) solid
+  uswds-core.color($theme-accordion-border-color);
 
 // Accordion Styles
 @mixin accordion-list-styles {
-  @include unstyled-list;
-  color: color("ink");
+  @include uswds-core.unstyled-list;
+  color: uswds-core.color("ink");
   margin: 0;
   padding: 0;
   width: 100%;
@@ -13,31 +15,31 @@ $accordion-border: units($theme-accordion-border-width) solid
 
 // scss-lint:disable PropertyCount
 @mixin accordion-button-styles {
-  @include button-unstyled;
-  @include add-background-svg("usa-icons/remove");
-  background-color: color("base-lightest");
-  background-position: right units(2.5) center;
-  background-size: units(3);
-  color: color("ink");
+  @include uswds-core.button-unstyled;
+  @include uswds-core.add-background-svg("usa-icons/remove");
+  background-color: uswds-core.color("base-lightest");
+  background-position: right uswds-core.units(2.5) center;
+  background-size: uswds-core.units(3);
+  color: uswds-core.color("ink");
   cursor: pointer;
   display: inline-block;
-  font-weight: font-weight("bold");
+  font-weight: uswds-core.font-weight("bold");
   margin: 0;
-  padding: units(2) units(2.5) * 2 + units(2) units(2) units(2.5);
+  padding: uswds-core.units(2) uswds-core.units(2.5) * 2 + uswds-core.units(2) uswds-core.units(2) uswds-core.units(2.5);
   text-decoration: none;
   width: 100%;
 
   &:hover {
-    background-color: color("base-lighter");
-    color: color("ink");
+    background-color: uswds-core.color("base-lighter");
+    color: uswds-core.color("ink");
     text-decoration: none;
   }
 }
 // scss-lint:enable PropertyCount
 
 @mixin accordion-button-unopened-styles {
-  @include add-background-svg("usa-icons/add");
-  background-size: units(3);
+  @include uswds-core.add-background-svg("usa-icons/add");
+  background-size: uswds-core.units(3);
 }
 
 @mixin accordion-nested-list {
@@ -55,12 +57,12 @@ $accordion-border: units($theme-accordion-border-width) solid
 .usa-accordion {
   @include accordion-list-styles;
   @include accordion-nested-list;
-  @include border-box-sizing;
-  @include typeset($theme-accordion-font-family);
+  @include uswds-core.border-box-sizing;
+  @include uswds-core.typeset($theme-accordion-font-family);
 
   + .usa-accordion,
   + .usa-accordion--bordered {
-    margin-top: units(1);
+    margin-top: uswds-core.units(1);
   }
 }
 
@@ -69,7 +71,7 @@ $accordion-border: units($theme-accordion-border-width) solid
     border-bottom: $accordion-border;
     border-left: $accordion-border;
     border-right: $accordion-border;
-    padding-bottom: units(2);
+    padding-bottom: uswds-core.units(2);
   }
 
   .usa-accordion__heading {
@@ -81,19 +83,19 @@ $accordion-border: units($theme-accordion-border-width) solid
 // kludge to override .usa-prose styles
 // TODO: work this into a mixin
 .usa-prose .usa-accordion__heading {
-  @include typeset($theme-accordion-font-family, $theme-body-font-size, 1);
+  @include uswds-core.typeset($theme-accordion-font-family, $theme-body-font-size, 1);
   margin: 0;
 
   &:not(:first-child) {
-    margin-top: units(1);
+    margin-top: uswds-core.units(1);
   }
 }
 
 .usa-accordion__content {
-  background-color: color("white");
+  background-color: uswds-core.color("white");
   margin-top: 0;
   overflow: auto;
-  padding: units(2) units(2.5) calc(#{units(2)} - #{units(0.5)}) units(2.5);
+  padding: uswds-core.units(2) uswds-core.units(2.5) calc(#{uswds-core.units(2)} - #{uswds-core.units(0.5)}) uswds-core.units(2.5);
 
   > *:first-child {
     margin-top: 0;

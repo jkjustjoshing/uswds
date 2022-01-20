@@ -1,3 +1,5 @@
+@use "../packages/uswds-core";
+
 .usa-focus {
-  @include focus-outline;
+  @include uswds-core.focus-outline;
 }

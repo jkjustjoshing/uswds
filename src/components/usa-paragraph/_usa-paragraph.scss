@@ -1,7 +1,9 @@
+@use "../../stylesheets/packages/uswds-core";
+
 %usa-paragraph {
-  @include typeset-p;
+  @include uswds-core.typeset-p;
 }
 
 .usa-paragraph {
-  @include typeset-p;
+  @include uswds-core.typeset-p;
 }

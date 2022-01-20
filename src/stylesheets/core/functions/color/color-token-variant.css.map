@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA;;;;;;;;;;;;;;;EAeE",
+    "sources": [
+        "color-token-variant.scss"
+    ],
+    "names": [],
+    "file": "color-token-variant.css"
+}

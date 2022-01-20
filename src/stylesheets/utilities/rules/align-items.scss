@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 align-items
@@ -19,8 +21,8 @@ $u-align-items: (
     base: "flex",
     modifiers: null,
     values:
-      map-collect(
-        get-palettes($align-items-palettes),
+      uswds-core.map-collect(
+        uswds-core.get-palettes($align-items-palettes),
         $align-items-manual-values
       ),
     settings: $align-items-settings,

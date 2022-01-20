@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 .measure
@@ -20,7 +22,7 @@ $u-measure: (
   measure: (
     base: "measure",
     modifiers: null,
-    values: map-collect(get-palettes($measure-palettes), $measure-manual-values),
+    values: uswds-core.map-collect(uswds-core.get-palettes($measure-palettes), $measure-manual-values),
     settings: $measure-settings,
     property: "max-width",
     type: "utility",

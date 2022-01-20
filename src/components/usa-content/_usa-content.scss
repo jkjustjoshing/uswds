@@ -1,11 +1,13 @@
+@use "../../stylesheets/packages/uswds-core";
+
 .usa-content {
   p,
   ul:not(.usa-accordion):not(.usa-accordion--bordered),
   ol:not(.usa-accordion):not(.usa-accordion--bordered) {
-    max-width: measure($theme-text-measure);
+    max-width: uswds-core.measure($theme-text-measure);
   }
 }
 
 %usa-heading {
-  @include typeset-heading;
+  @include uswds-core.typeset-heading;
 }

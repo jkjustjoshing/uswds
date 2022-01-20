@@ -1,12 +1,15 @@
-$alert-slim-icon-size: units(3);
-$alert-icon-optical-factor: units($theme-alert-icon-size) / 6;
-$alert-icon-optical-padding: units($theme-alert-padding-x) -
+@use "sass:map";
+@use "../../stylesheets/packages/uswds-core";
+
+$alert-slim-icon-size: uswds-core.units(3);
+$alert-icon-optical-factor: uswds-core.units($theme-alert-icon-size) / 6;
+$alert-icon-optical-padding: uswds-core.units($theme-alert-padding-x) -
   $alert-icon-optical-factor;
 
 @mixin add-slim-alert-icon {
   &:before {
     background-size: $alert-slim-icon-size;
-    height: units(5);
+    height: uswds-core.units(5);
     width: $alert-slim-icon-size;
     @supports (mask: url("")) {
       mask-size: $alert-slim-icon-size;
@@ -14,8 +17,8 @@ $alert-icon-optical-padding: units($theme-alert-padding-x) -
   }
 }
 @mixin add-alert-icon($name, $color, $bgcolor) {
-  $this-icon-object: map-merge(
-    $icon-object,
+  $this-icon-object: map.merge(
+    uswds-core.$icon-object,
     (
       "name": $name,
       "color": $color,
@@ -23,10 +26,10 @@ $alert-icon-optical-padding: units($theme-alert-padding-x) -
     )
   );
   &:before {
-    @include add-color-icon($this-icon-object, $bgcolor);
+    @include uswds-core.add-color-icon($this-icon-object, $bgcolor);
     content: "";
     display: block;
-    height: (2 * units($theme-alert-padding-y)) + units(3);
+    height: (2 * uswds-core.units($theme-alert-padding-y)) + uswds-core.units(3);
     // padding - optical spacing value
     left: $alert-icon-optical-padding;
     position: absolute;
@@ -47,7 +50,7 @@ $alert-icons: (
   emergency: "error",
 );
 
-$icon-object: (
+uswds-core.$icon-object: (
   "name": "ICON_NAME",
   "svg-height": 40,
   "svg-width": 40,
@@ -55,24 +58,24 @@ $icon-object: (
   "color": "ink",
 );
 
-$alert-padding-left: units($theme-alert-bar-width);
+$alert-padding-left: uswds-core.units($theme-alert-bar-width);
 
 .usa-alert {
-  @include typeset($theme-alert-font-family);
-  @include border-box-sizing;
-  @include set-text-and-bg(
+  @include uswds-core.typeset($theme-alert-font-family);
+  @include uswds-core.border-box-sizing;
+  @include uswds-core.set-text-and-bg(
     "base-lightest",
     $theme-alert-text-color,
     $theme-alert-text-reverse-color
   );
-  @include u-padding-y($theme-alert-padding-y);
+  @include uswds-core.u-padding-y($theme-alert-padding-y);
   position: relative;
 
   * + & {
-    margin-top: units(2);
+    margin-top: uswds-core.units(2);
   }
 
-  border-left: units($theme-alert-bar-width) solid color("base-light");
+  border-left: uswds-core.units($theme-alert-bar-width) solid uswds-core.color("base-light");
 
   > .usa-list,
   .usa-alert__body > .usa-list {
@@ -85,45 +88,45 @@ $alert-padding-left: units($theme-alert-bar-width);
 }
 
 .usa-alert__body {
-  @include u-padding-x($theme-alert-padding-x);
+  @include uswds-core.u-padding-x($theme-alert-padding-x);
 }
 
 @each $name, $icon in $alert-icons {
   .usa-alert--#{$name} {
-    @include alert-status-styles($name, $icon);
+    @include uswds-core.alert-status-styles($name, $icon);
 
     .usa-alert__body {
-      padding-left: units($theme-alert-icon-size) +
+      padding-left: uswds-core.units($theme-alert-icon-size) +
         (2 * $alert-icon-optical-padding);
     }
   }
 }
 
 .usa-alert__heading {
-  @include typeset($theme-alert-font-family, "lg", 1);
+  @include uswds-core.typeset($theme-alert-font-family, "lg", 1);
   margin-top: 0;
-  margin-bottom: units(1);
+  margin-bottom: uswds-core.units(1);
 }
 
 .usa-alert__text {
-  @include u-margin-y(0);
+  @include uswds-core.u-margin-y(0);
 
   a {
-    @include typeset-link;
+    @include uswds-core.typeset-link;
   }
 }
 
 .usa-alert__text:only-child {
-  @include u-padding-y(0);
+  @include uswds-core.u-padding-y(0);
 }
 
 .usa-alert--slim {
-  @include alert-slim-styles;
+  @include uswds-core.alert-slim-styles;
 }
 
 .usa-alert--validation {
   .usa-checklist {
-    margin-top: units(2);
+    margin-top: uswds-core.units(2);
   }
 }
 

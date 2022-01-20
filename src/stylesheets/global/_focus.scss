@@ -1,4 +1,5 @@
-@import "../helpers/usa-focus";
+@use "../helpers/usa-focus";
+@use "../packages/uswds-core";
 
 // Apply :focus behavior to focusable elements only (For IE 11)
 input,
@@ -7,7 +8,7 @@ textarea,
 button {
   &:not([disabled]) {
     &:focus {
-      @include focus-outline;
+      @include uswds-core.focus-outline;
     }
   }
 }
@@ -17,6 +18,6 @@ iframe,
 [tabindex],
 [contentEditable="true"] {
   &:focus {
-    @include focus-outline;
+    @include uswds-core.focus-outline;
   }
 }

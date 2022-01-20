@@ -1,12 +1,16 @@
+@use "sass:list";
+@use "sass:map";
+@use "../../stylesheets/packages/uswds-core";
+
 $banner-context: "Banner";
 $banner-guidance-measure: 3;
-$banner-icon-colors: get-link-tokens-from-bg(
+$banner-icon-colors: uswds-core.get-link-tokens-from-bg(
   $theme-banner-background-color,
   $theme-banner-link-color,
   $context: $banner-context
 );
-$banner-icon-color: nth($banner-icon-colors, 1);
-$banner-icon-hover: nth($banner-icon-colors, 2);
+$banner-icon-color: list.nth($banner-icon-colors, 1);
+$banner-icon-hover: list.nth($banner-icon-colors, 2);
 $banner-icon-chevron: (
   "name": "expand_more",
   "svg-height": 40,
@@ -16,7 +20,7 @@ $banner-icon-chevron: (
   "color-variant": "white",
   "color-hover": $banner-icon-hover,
 );
-$banner-icon-chevron-up: map-merge(
+$banner-icon-chevron-up: map.merge(
   $banner-icon-chevron,
   (
     "name": "expand_less",
@@ -29,46 +33,46 @@ $banner-icon-close: (
   "height": 3,
   "color": "blue-60v",
   "color-variant": "white",
-  "container-height": $size-touch-target,
-  "container-width": $size-touch-target,
+  "container-height": uswds-core.$size-touch-target,
+  "container-width": uswds-core.$size-touch-target,
 );
 
 .usa-banner {
-  @include typeset($theme-banner-font-family);
-  @include border-box-sizing;
-  background-color: color($theme-banner-background-color);
+  @include uswds-core.typeset($theme-banner-font-family);
+  @include uswds-core.border-box-sizing;
+  background-color: uswds-core.color($theme-banner-background-color);
 
-  @include at-media("tablet") {
-    font-size: font-size($theme-banner-font-family, "3xs");
-    padding-bottom: units(0);
+  @include uswds-core.at-media("tablet") {
+    font-size: uswds-core.font-size($theme-banner-font-family, "3xs");
+    padding-bottom: uswds-core.units(0);
   }
 
   .usa-accordion {
-    @include typeset($theme-banner-font-family);
+    @include uswds-core.typeset($theme-banner-font-family);
   }
 }
 
 .usa-banner__header,
 .usa-banner__content {
-  @include set-text-from-bg(
+  @include uswds-core.set-text-from-bg(
     $theme-banner-background-color,
     $context: $banner-context
   );
 }
 
 .usa-banner__content {
-  @include grid-container($theme-banner-max-width);
-  @include add-responsive-site-margins;
-  background-color: color("transparent");
-  font-size: font-size($theme-banner-font-family, 4);
+  @include uswds-core.grid-container($theme-banner-max-width);
+  @include uswds-core.add-responsive-site-margins;
+  background-color: uswds-core.color("transparent");
+  font-size: uswds-core.font-size($theme-banner-font-family, 4);
   overflow: hidden;
-  padding-bottom: units(2);
-  padding-left: units($theme-site-margins-mobile-width - 1);
-  padding-top: units(0.5);
+  padding-bottom: uswds-core.units(2);
+  padding-left: uswds-core.units($theme-site-margins-mobile-width - 1);
+  padding-top: uswds-core.units(0.5);
   width: 100%;
 
-  @include at-media("tablet") {
-    @include u-padding-y(3);
+  @include uswds-core.at-media("tablet") {
+    @include uswds-core.u-padding-y(3);
   }
 
   p {
@@ -79,13 +83,13 @@ $banner-icon-close: (
 }
 
 .usa-banner__guidance {
-  @include u-display("flex");
-  @include u-flex("align-start");
-  @include u-measure($banner-guidance-measure);
-  padding-top: units(2);
+  @include uswds-core.u-display("flex");
+  @include uswds-core.u-flex("align-start");
+  @include uswds-core.u-measure($banner-guidance-measure);
+  padding-top: uswds-core.units(2);
 
-  @include at-media("tablet") {
-    padding-top: units(0);
+  @include uswds-core.at-media("tablet") {
+    padding-top: uswds-core.units(0);
   }
 }
 
@@ -103,92 +107,92 @@ $banner-icon-close: (
 }
 
 .usa-banner__inner {
-  @include add-responsive-site-margins;
-  @include grid-container($theme-banner-max-width);
-  @include grid-row;
-  @include u-flex("align-start");
-  padding-right: units(0);
+  @include uswds-core.add-responsive-site-margins;
+  @include uswds-core.grid-container($theme-banner-max-width);
+  @include uswds-core.grid-row;
+  @include uswds-core.u-flex("align-start");
+  padding-right: uswds-core.units(0);
 
-  @include at-media("tablet") {
-    @include u-flex("align-center");
+  @include uswds-core.at-media("tablet") {
+    @include uswds-core.u-flex("align-center");
   }
 }
 
 .usa-banner__header {
-  @include u-padding-y(1);
-  font-size: font-size($theme-banner-font-family, 1);
-  font-weight: font-weight("normal");
-  min-height: units($size-touch-target);
+  @include uswds-core.u-padding-y(1);
+  font-size: uswds-core.font-size($theme-banner-font-family, 1);
+  font-weight: uswds-core.font-weight("normal");
+  min-height: uswds-core.units(uswds-core.$size-touch-target);
   position: relative;
 
-  @include at-media("tablet") {
-    @include u-padding-y(0.5);
+  @include uswds-core.at-media("tablet") {
+    @include uswds-core.u-padding-y(0.5);
     min-height: 0;
   }
 }
 
 .usa-banner__header-text {
-  @include u-margin-y(0);
-  font-size: font-size($theme-banner-font-family, 1);
-  line-height: line-height($theme-banner-font-family, 2);
+  @include uswds-core.u-margin-y(0);
+  font-size: uswds-core.font-size($theme-banner-font-family, 1);
+  line-height: uswds-core.line-height($theme-banner-font-family, 2);
 }
 
 .usa-banner__header-action {
-  @include place-icon(
+  @include uswds-core.place-icon(
     $banner-icon-chevron,
     "after",
     0,
     middle,
     $theme-banner-background-color
   );
-  @include set-link-from-bg(
+  @include uswds-core.set-link-from-bg(
     $theme-banner-background-color,
     $theme-banner-link-color,
     $context: $banner-context
   );
 
-  line-height: line-height($theme-banner-font-family, 2);
-  margin-bottom: units(0);
-  margin-top: units(2px);
+  line-height: uswds-core.line-height($theme-banner-font-family, 2);
+  margin-bottom: uswds-core.units(0);
+  margin-top: uswds-core.units(2px);
   text-decoration: underline;
 
   .usa-banner__header--expanded & {
     display: none;
   }
 
-  @include at-media("tablet") {
+  @include uswds-core.at-media("tablet") {
     display: none;
   }
 }
 
 .usa-banner__header-flag {
-  @include u-float("left");
-  margin-right: units(1);
-  width: units(2);
+  @include uswds-core.u-float("left");
+  margin-right: uswds-core.units(1);
+  width: uswds-core.units(2);
 
-  @include at-media("tablet") {
-    margin-right: units(1);
-    padding-top: units(0);
+  @include uswds-core.at-media("tablet") {
+    margin-right: uswds-core.units(1);
+    padding-top: uswds-core.units(0);
   }
 }
 
 .usa-banner__header--expanded {
-  padding-right: units($size-touch-target + 1);
+  padding-right: uswds-core.units(uswds-core.$size-touch-target + 1);
 
-  @include at-media("tablet") {
+  @include uswds-core.at-media("tablet") {
     background-color: transparent;
     display: block;
-    font-size: font-size($theme-banner-font-family, 1);
-    font-weight: font-weight("normal");
-    min-height: units(0);
-    padding-right: units(0);
+    font-size: uswds-core.font-size($theme-banner-font-family, 1);
+    font-weight: uswds-core.font-weight("normal");
+    min-height: uswds-core.units(0);
+    padding-right: uswds-core.units(0);
   }
 
   .usa-banner__inner {
-    margin-left: units(0);
+    margin-left: uswds-core.units(0);
 
-    @include at-media("tablet") {
-      margin-left: units(auto);
+    @include uswds-core.at-media("tablet") {
+      margin-left: uswds-core.units(auto);
     }
   }
 
@@ -198,44 +202,44 @@ $banner-icon-close: (
 }
 
 .usa-banner__button {
-  @include button-unstyled;
-  @include u-pin("left");
-  @include u-pin("y");
-  @include u-text("primary", underline, baseline);
-  @include set-link-from-bg(
+  @include uswds-core.button-unstyled;
+  @include uswds-core.u-pin("left");
+  @include uswds-core.u-pin("y");
+  @include uswds-core.u-text("primary", underline, baseline);
+  @include uswds-core.set-link-from-bg(
     $theme-banner-background-color,
     $theme-banner-link-color,
     $context: $banner-context
   );
   display: block;
-  font-size: font-size($theme-banner-font-family, 1);
+  font-size: uswds-core.font-size($theme-banner-font-family, 1);
   height: auto;
-  line-height: line-height($theme-banner-font-family, 2);
-  padding-top: units(0);
-  padding-left: units(0);
+  line-height: uswds-core.line-height($theme-banner-font-family, 2);
+  padding-top: uswds-core.units(0);
+  padding-left: uswds-core.units(0);
   text-decoration: none;
   width: auto;
 
-  @include at-media-max("tablet") {
+  @include uswds-core.at-media-max("tablet") {
     width: 100%;
   }
 
-  @include at-media("tablet") {
-    @include place-icon(
+  @include uswds-core.at-media("tablet") {
+    @include uswds-core.place-icon(
       $banner-icon-chevron,
       "after",
       "2px",
       middle,
       $theme-banner-background-color
     );
-    @include set-link-from-bg(
+    @include uswds-core.set-link-from-bg(
       $theme-banner-background-color,
       $theme-banner-link-color,
       $context: $banner-context
     );
-    @include u-pin("none");
+    @include uswds-core.u-pin("none");
     display: inline;
-    margin-left: units(1);
+    margin-left: uswds-core.units(1);
     position: relative;
 
     &:after {
@@ -255,8 +259,8 @@ $banner-icon-close: (
   &[aria-expanded="true"] {
     background-image: none;
 
-    @include at-media-max("tablet") {
-      @include place-icon(
+    @include uswds-core.at-media-max("tablet") {
+      @include uswds-core.place-icon(
         $banner-icon-close,
         "after",
         0,
@@ -265,22 +269,22 @@ $banner-icon-close: (
       );
 
       &:before {
-        @include u-pin("y");
-        @include u-pin("right");
-        background-color: color("base-lighter");
+        @include uswds-core.u-pin("y");
+        @include uswds-core.u-pin("right");
+        background-color: uswds-core.color("base-lighter");
         content: "";
         display: block;
-        height: units($size-touch-target);
-        width: units($size-touch-target);
+        height: uswds-core.units(uswds-core.$size-touch-target);
+        width: uswds-core.units(uswds-core.$size-touch-target);
       }
       &:after {
-        @include u-pin("y");
-        @include u-pin("right");
+        @include uswds-core.u-pin("y");
+        @include uswds-core.u-pin("right");
       }
     }
 
-    @include at-media("tablet") {
-      @include place-icon(
+    @include uswds-core.at-media("tablet") {
+      @include uswds-core.place-icon(
         $banner-icon-chevron-up,
         "after",
         "2px",
@@ -288,7 +292,7 @@ $banner-icon-close: (
         $theme-banner-background-color
       );
       height: auto;
-      padding: units(0);
+      padding: uswds-core.units(0);
       position: relative;
 
       &:after {
@@ -299,22 +303,22 @@ $banner-icon-close: (
 }
 
 .usa-banner__button-text {
-  @include add-sr-only;
+  @include uswds-core.add-sr-only;
   text-decoration: underline;
 
-  @include at-media("tablet") {
-    @include add-no-sr-only;
+  @include uswds-core.at-media("tablet") {
+    @include uswds-core.add-no-sr-only;
     display: inline;
   }
 }
 
 .usa-banner__icon {
-  width: units(5);
+  width: uswds-core.units(5);
 }
 
 // [uswds-init.js] Offscreen content while js is loading
 .usa-js-loading {
   .usa-banner__content {
-    @include add-sr-only;
+    @include uswds-core.add-sr-only;
   }
 }

@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 margin
@@ -24,7 +26,7 @@ $u-margin: (
     modifiers: (
       noModifier: "",
     ),
-    values: map-collect(get-palettes($margin-palettes), $margin-manual-values),
+    values: uswds-core.map-collect(uswds-core.get-palettes($margin-palettes), $margin-manual-values),
     settings: $margin-settings,
     property: "margin",
     type: "utility",
@@ -40,8 +42,8 @@ $u-margin: (
       "bottom": "-bottom",
     ),
     values:
-      map-collect(
-        get-palettes($margin-vertical-palettes),
+      uswds-core.map-collect(
+        uswds-core.get-palettes($margin-vertical-palettes),
         $margin-manual-values
       ),
     settings: $margin-settings,
@@ -59,8 +61,8 @@ $u-margin: (
       "left": "-left",
     ),
     values:
-      map-collect(
-        get-palettes($margin-horizontal-palettes),
+      uswds-core.map-collect(
+        uswds-core.get-palettes($margin-horizontal-palettes),
         $margin-manual-values
       ),
     settings: $margin-settings,

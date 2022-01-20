@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 float
@@ -18,7 +20,7 @@ $u-float: (
   float: (
     base: "float",
     modifiers: null,
-    values: map-collect(get-palettes($float-palettes), $float-manual-values),
+    values: uswds-core.map-collect(uswds-core.get-palettes($float-palettes), $float-manual-values),
     settings: $float-settings,
     property: "float",
     type: "utility",

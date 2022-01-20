@@ -1,4 +1,6 @@
+@use "../packages/uswds-core";
+
 body {
-  @include set-text-and-bg($context: "Body");
+  @include uswds-core.set-text-and-bg($context: "Body");
   overflow-x: hidden;
 }

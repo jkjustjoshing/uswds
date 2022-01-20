@@ -1,10 +1,12 @@
+@use "../../stylesheets/packages/uswds-core";
+
 $date-picker-max-width: "mobile";
 
 // Date Picker
 .usa-date-picker__wrapper {
   display: none;
   position: relative;
-  max-width: units($theme-input-max-width);
+  max-width: uswds-core.units($theme-input-max-width);
 
   &:focus {
     outline: 0;
@@ -13,7 +15,7 @@ $date-picker-max-width: "mobile";
 
 // Date Picker -- initialized
 %usa-date-picker__button {
-  background-color: color("base-lightest");
+  background-color: uswds-core.color("base-lightest");
   border: 0;
   width: 100%;
 
@@ -25,11 +27,11 @@ $date-picker-max-width: "mobile";
     }
 
     &:hover {
-      background-color: color("base-lighter");
+      background-color: uswds-core.color("base-lighter");
     }
 
     &:active {
-      background-color: color("base-light");
+      background-color: uswds-core.color("base-light");
     }
   }
 }
@@ -40,17 +42,17 @@ $date-picker-max-width: "mobile";
   }
 
   .usa-date-picker__calendar {
-    z-index: z-index(400);
+    z-index: uswds-core.z-index(400);
   }
 }
 
 .usa-date-picker__button {
   @extend %usa-date-picker__button;
-  @include add-background-svg("usa-icons/calendar_today");
+  @include uswds-core.add-background-svg("usa-icons/calendar_today");
   align-self: stretch;
   background-color: transparent;
   background-position: center;
-  background-size: units(3);
+  background-size: uswds-core.units(3);
   margin-top: 0.5em;
   width: 3em;
 }
@@ -63,13 +65,13 @@ $date-picker-max-width: "mobile";
 
 // Date Picker - Calendar View
 .usa-date-picker__calendar {
-  background-color: color("base-lightest");
+  background-color: uswds-core.color("base-lightest");
   left: auto;
-  max-width: units($date-picker-max-width);
+  max-width: uswds-core.units($date-picker-max-width);
   position: absolute;
   right: 0;
   width: 100%;
-  z-index: z-index(100);
+  z-index: uswds-core.z-index(100);
 }
 
 // Date Picker - Table
@@ -91,13 +93,13 @@ $date-picker-max-width: "mobile";
 
 // Date Picker - Grid
 .usa-date-picker__calendar__row {
-  @include grid-row;
+  @include uswds-core.grid-row;
   text-align: center;
   width: 100%;
 }
 
 .usa-date-picker__calendar__cell {
-  background-color: color("base-lightest");
+  background-color: uswds-core.color("base-lightest");
   flex: 1;
 }
 
@@ -114,25 +116,25 @@ $date-picker-max-width: "mobile";
 .usa-date-picker__calendar__next-month {
   @extend %usa-date-picker__button;
   background-position: center;
-  background-size: auto units(3);
-  height: units(3);
+  background-size: auto uswds-core.units(3);
+  height: uswds-core.units(3);
   padding: 20px 10px;
 }
 
 .usa-date-picker__calendar__previous-year:not([disabled]) {
-  @include add-background-svg("usa-icons/navigate_far_before");
+  @include uswds-core.add-background-svg("usa-icons/navigate_far_before");
 }
 
 .usa-date-picker__calendar__previous-month:not([disabled]) {
-  @include add-background-svg("usa-icons/navigate_before");
+  @include uswds-core.add-background-svg("usa-icons/navigate_before");
 }
 
 .usa-date-picker__calendar__next-year:not([disabled]) {
-  @include add-background-svg("usa-icons/navigate_far_next");
+  @include uswds-core.add-background-svg("usa-icons/navigate_far_next");
 }
 
 .usa-date-picker__calendar__next-month:not([disabled]) {
-  @include add-background-svg("usa-icons/navigate_next");
+  @include uswds-core.add-background-svg("usa-icons/navigate_next");
 }
 
 .usa-date-picker__calendar__day-of-week {
@@ -144,37 +146,37 @@ $date-picker-max-width: "mobile";
   padding: 10px 0px;
 
   &--focused {
-    @include focus-outline($width: 2px, $offset: -2px, $color: "blue-warm-80v");
+    @include uswds-core.focus-outline($width: 2px, $offset: -2px, $color: "blue-warm-80v");
     position: relative;
-    z-index: z-index(100);
+    z-index: uswds-core.z-index(100);
   }
 
   &--next-month:not([disabled]),
   &--previous-month:not([disabled]) {
-    color: color("gray-warm-60");
+    color: uswds-core.color("gray-warm-60");
   }
 
   &--selected,
   &--range-date {
-    background-color: color("primary-vivid");
-    color: color("gray-2");
+    background-color: uswds-core.color("primary-vivid");
+    color: uswds-core.color("gray-2");
 
     &:not([disabled]) {
-      background-color: color("primary-vivid");
-      color: color("gray-2");
+      background-color: uswds-core.color("primary-vivid");
+      color: uswds-core.color("gray-2");
 
       &:hover {
-        background-color: color("primary-vivid");
-        color: color("gray-10");
+        background-color: uswds-core.color("primary-vivid");
+        color: uswds-core.color("gray-10");
       }
 
       &:focus {
-        background-color: color("primary-vivid");
-        color: color("gray-2");
+        background-color: uswds-core.color("primary-vivid");
+        color: uswds-core.color("gray-2");
       }
 
       &:active {
-        background-color: color("primary-dark");
+        background-color: uswds-core.color("primary-dark");
       }
     }
   }
@@ -190,21 +192,21 @@ $date-picker-max-width: "mobile";
   }
 
   &--within-range {
-    background-color: color("blue-10v");
+    background-color: uswds-core.color("blue-10v");
 
     &:not([disabled]) {
-      background-color: color("blue-10v");
+      background-color: uswds-core.color("blue-10v");
 
       &:hover {
-        background-color: color("blue-10v");
+        background-color: uswds-core.color("blue-10v");
       }
 
       &:focus {
-        background-color: color("blue-10v");
+        background-color: uswds-core.color("blue-10v");
       }
 
       &:active {
-        background-color: color("blue-10v");
+        background-color: uswds-core.color("blue-10v");
       }
     }
   }
@@ -234,31 +236,31 @@ $date-picker-max-width: "mobile";
   padding: 10px 0;
 
   &--focused {
-    @include focus-outline($width: 2px, $offset: -2px, $color: "blue-warm-80v");
+    @include uswds-core.focus-outline($width: 2px, $offset: -2px, $color: "blue-warm-80v");
     position: relative;
-    z-index: z-index(100);
+    z-index: uswds-core.z-index(100);
   }
 
   &--selected {
-    background-color: color("primary-vivid");
-    color: color("gray-2");
+    background-color: uswds-core.color("primary-vivid");
+    color: uswds-core.color("gray-2");
 
     &:not([disabled]) {
-      background-color: color("primary-vivid");
-      color: color("gray-2");
+      background-color: uswds-core.color("primary-vivid");
+      color: uswds-core.color("gray-2");
 
       &:hover {
-        background-color: color("primary-vivid");
-        color: color("gray-10");
+        background-color: uswds-core.color("primary-vivid");
+        color: uswds-core.color("gray-10");
       }
 
       &:focus {
-        background-color: color("primary-vivid");
-        color: color("gray-2");
+        background-color: uswds-core.color("primary-vivid");
+        color: uswds-core.color("gray-2");
       }
 
       &:active {
-        background-color: color("primary-dark");
+        background-color: uswds-core.color("primary-dark");
       }
     }
   }
@@ -273,17 +275,17 @@ $date-picker-max-width: "mobile";
 .usa-date-picker__calendar__next-year-chunk {
   @extend %usa-date-picker__button;
   background-position: center;
-  background-size: auto units(4);
+  background-size: auto uswds-core.units(4);
   margin: auto;
   padding: 40px 0;
 }
 
 .usa-date-picker__calendar__previous-year-chunk:not([disabled]) {
-  @include add-background-svg("usa-icons/navigate_before");
+  @include uswds-core.add-background-svg("usa-icons/navigate_before");
 }
 
 .usa-date-picker__calendar__next-year-chunk:not([disabled]) {
-  @include add-background-svg("usa-icons/navigate_next");
+  @include uswds-core.add-background-svg("usa-icons/navigate_next");
 }
 
 .usa-date-picker__calendar__year {
@@ -291,31 +293,31 @@ $date-picker-max-width: "mobile";
   padding: 10px 0;
 
   &--focused {
-    @include focus-outline($width: 2px, $offset: -2px, $color: "blue-warm-80v");
+    @include uswds-core.focus-outline($width: 2px, $offset: -2px, $color: "blue-warm-80v");
     position: relative;
-    z-index: z-index(100);
+    z-index: uswds-core.z-index(100);
   }
 
   &--selected {
-    background-color: color("primary-vivid");
-    color: color("gray-2");
+    background-color: uswds-core.color("primary-vivid");
+    color: uswds-core.color("gray-2");
 
     &:not([disabled]) {
-      background-color: color("primary-vivid");
-      color: color("gray-2");
+      background-color: uswds-core.color("primary-vivid");
+      color: uswds-core.color("gray-2");
 
       &:hover {
-        background-color: color("primary-vivid");
-        color: color("gray-10");
+        background-color: uswds-core.color("primary-vivid");
+        color: uswds-core.color("gray-10");
       }
 
       &:focus {
-        background-color: color("primary-vivid");
-        color: color("gray-2");
+        background-color: uswds-core.color("primary-vivid");
+        color: uswds-core.color("gray-2");
       }
 
       &:active {
-        background-color: color("primary-dark");
+        background-color: uswds-core.color("primary-dark");
       }
     }
   }

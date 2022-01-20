@@ -1,12 +1,14 @@
+@use "../../stylesheets/packages/uswds-core";
+
 .usa-select {
   @extend %block-input-general;
   @extend %block-input-styles;
-  @include add-background-svg("usa-icons/unfold_more");
+  @include uswds-core.add-background-svg("usa-icons/unfold_more");
   appearance: none;
-  background-color: color("white");
-  background-position: right units(1) center;
-  background-size: units(2.5);
-  padding-right: units(4);
+  background-color: uswds-core.color("white");
+  background-position: right uswds-core.units(1) center;
+  background-size: uswds-core.units(2.5);
+  padding-right: uswds-core.units(4);
 
   &::-ms-expand {
     display: none;
@@ -20,6 +22,6 @@
   // Remove dotted outline from select element on focus in Firefox
   &:-moz-focusring {
     color: transparent;
-    text-shadow: 0 0 0 color("black");
+    text-shadow: 0 0 0 uswds-core.color("black");
   }
 }

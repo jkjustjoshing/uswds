@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 outline-color
@@ -19,9 +21,9 @@ $u-outline-color: (
     base: "outline",
     modifiers: null,
     values:
-      map-collect(
-        get-palettes($outline-color-palettes),
-        get-palettes($global-color-palettes),
+      uswds-core.map-collect(
+        uswds-core.get-palettes($outline-color-palettes),
+        uswds-core.get-palettes($global-color-palettes),
         $outline-color-manual-values
       ),
     settings: $outline-color-settings,

@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 border-radius
@@ -41,8 +43,8 @@ $u-border-radius: (
     ),
     property: "",
     values:
-      map-collect(
-        get-palettes($border-radius-palettes),
+      uswds-core.map-collect(
+        uswds-core.get-palettes($border-radius-palettes),
         $border-radius-manual-values
       ),
     settings: $border-radius-settings,

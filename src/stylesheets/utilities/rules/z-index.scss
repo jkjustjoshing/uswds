@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 z-index
@@ -20,7 +22,7 @@ $u-z-index: (
   z-index: (
     base: "z",
     modifiers: null,
-    values: map-collect(get-palettes($z-index-palettes), $z-index-manual-values),
+    values: uswds-core.map-collect(uswds-core.get-palettes($z-index-palettes), $z-index-manual-values),
     settings: $z-index-settings,
     property: "z-index",
     type: "utility",

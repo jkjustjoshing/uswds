@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 font-style
@@ -21,7 +23,7 @@ $u-font-style: (
     base: "text",
     modifiers: null,
     values:
-      map-collect(get-palettes($font-style-palettes), $font-style-manual-values),
+      uswds-core.map-collect(uswds-core.get-palettes($font-style-palettes), $font-style-manual-values),
     settings: $font-style-settings,
     property: "font-style",
     type: "utility",

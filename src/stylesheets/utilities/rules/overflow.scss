@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 overflow
@@ -23,7 +25,7 @@ $u-overflow: (
       "x": "-x",
     ),
     values:
-      map-collect(get-palettes($overflow-palettes), $overflow-manual-values),
+      uswds-core.map-collect(uswds-core.get-palettes($overflow-palettes), $overflow-manual-values),
     settings: $overflow-settings,
     property: "overflow",
     type: "utility",

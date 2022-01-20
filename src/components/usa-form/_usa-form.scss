@@ -1,15 +1,17 @@
+@use "../../stylesheets/packages/uswds-core";
+
 .usa-form {
-  @include typeset(
+  @include uswds-core.typeset(
     $theme-form-font-family,
     $theme-body-font-size,
     $theme-input-line-height
   );
-  @include border-box-sizing;
+  @include uswds-core.border-box-sizing;
 }
 
 .usa-form {
-  @include at-media("mobile-lg") {
-    max-width: units("mobile");
+  @include uswds-core.at-media("mobile-lg") {
+    max-width: uswds-core.units("mobile");
   }
 
   .usa-input,
@@ -48,26 +50,26 @@
   }
 
   .usa-button {
-    margin-top: units(1);
+    margin-top: uswds-core.units(1);
 
-    @include at-media("mobile-lg") {
-      margin-top: units(3);
+    @include uswds-core.at-media("mobile-lg") {
+      margin-top: uswds-core.units(3);
     }
   }
 
   a {
-    @include typeset-link;
+    @include uswds-core.typeset-link;
   }
 }
 
 .usa-form--large {
-  @include at-media("mobile-lg") {
-    max-width: units("mobile-lg");
+  @include uswds-core.at-media("mobile-lg") {
+    max-width: uswds-core.units("mobile-lg");
   }
 }
 
 .usa-form__note {
-  @include typeset($theme-form-font-family, "2xs", 3);
+  @include uswds-core.typeset($theme-form-font-family, "2xs", 3);
   float: right;
-  margin: units(0.5) 0 units(2);
+  margin: uswds-core.units(0.5) 0 uswds-core.units(2);
 }

@@ -1,72 +1,74 @@
+@use "../../stylesheets/packages/uswds-core";
+
 $collection-thumb-width: 10;
 $collection-thumb-width-mobile: 8;
 $collection-thumb-margin: 2;
 
-@include override-prose {
+@include uswds-core.override-prose {
   .usa-collection {
-    @include typeset($theme-collection-font-family, "sm", 3);
+    @include uswds-core.typeset($theme-collection-font-family, "sm", 3);
     @extend %usa-list;
-    @include u-padding-left(0);
+    @include uswds-core.u-padding-left(0);
   }
 
   .usa-collection__item {
     @extend %usa-list-item;
-    @include unstyled-list;
-    @include u-align-items("align-start");
-    @include u-border-top(1px);
-    @include u-display("flex");
-    @include u-margin-y(2);
-    @include u-padding-top(2);
+    @include uswds-core.unstyled-list;
+    @include uswds-core.u-align-items("align-start");
+    @include uswds-core.u-border-top(1px);
+    @include uswds-core.u-display("flex");
+    @include uswds-core.u-margin-y(2);
+    @include uswds-core.u-padding-top(2);
   }
 }
 
 .usa-collection__img,
 .usa-collection__calendar-date {
-  @include media-block-img;
-  width: units($collection-thumb-width-mobile);
-  margin-right: units($collection-thumb-margin);
+  @include uswds-core.media-block-img;
+  width: uswds-core.units($collection-thumb-width-mobile);
+  margin-right: uswds-core.units($collection-thumb-margin);
 
-  @include at-media("tablet") {
-    width: units($collection-thumb-width);
+  @include uswds-core.at-media("tablet") {
+    width: uswds-core.units($collection-thumb-width);
   }
 }
 
 .usa-collection__body {
-  @include u-flex(1);
+  @include uswds-core.u-flex(1);
 }
 
 .usa-collection__heading {
-  @include typeset($theme-collection-header-typeset);
-  @include u-margin-bottom(0);
-  @include u-margin-top(0);
+  @include uswds-core.typeset($theme-collection-header-typeset);
+  @include uswds-core.u-margin-bottom(0);
+  @include uswds-core.u-margin-top(0);
 }
 
 .usa-collection__description {
-  @include u-margin-y(1);
+  @include uswds-core.u-margin-y(1);
 }
 
 .usa-collection__meta {
-  @include unstyled-list;
-  @include u-margin-top(0.5);
+  @include uswds-core.unstyled-list;
+  @include uswds-core.u-margin-top(0.5);
 }
 
 .usa-collection__meta-item {
-  @include u-margin-top(0.5);
-  @include typeset("ui", "2xs", 3);
+  @include uswds-core.u-margin-top(0.5);
+  @include uswds-core.typeset("ui", "2xs", 3);
   display: block;
-  margin-right: units(1);
+  margin-right: uswds-core.units(1);
 
   &.usa-tag {
-    @include u-bg("base-lighter");
-    @include u-line-height("ui", 1);
-    @include u-padding-y(0.5);
-    @include u-text("ink");
+    @include uswds-core.u-bg("base-lighter");
+    @include uswds-core.u-line-height("ui", 1);
+    @include uswds-core.u-padding-y(0.5);
+    @include uswds-core.u-text("ink");
     display: inline-block;
-    margin-top: units(0.5);
+    margin-top: uswds-core.units(0.5);
 
     &--new {
-      @include u-bg("accent-warm-dark");
-      @include u-text("white");
+      @include uswds-core.u-bg("accent-warm-dark");
+      @include uswds-core.u-text("white");
     }
   }
 }
@@ -77,32 +79,32 @@ $collection-thumb-margin: 2;
 
 .usa-collection__calendar-date-month,
 .usa-collection__calendar-date-day {
-  @include u-font("ui", 6);
+  @include uswds-core.u-font("ui", 6);
   display: block;
-  font-weight: fw("bold");
-  padding: units(0.5);
+  font-weight: uswds-core.fw("bold");
+  padding: uswds-core.units(0.5);
   text-align: center;
 
-  @include at-media("tablet") {
-    padding: units(1);
+  @include uswds-core.at-media("tablet") {
+    padding: uswds-core.units(1);
   }
 }
 
 .usa-collection__calendar-date-month {
-  @include u-radius-top("sm");
-  background-color: color("primary");
-  color: color("white");
+  @include uswds-core.u-radius-top("sm");
+  background-color: uswds-core.color("primary");
+  color: uswds-core.color("white");
 }
 
 .usa-collection__calendar-date-day {
-  @include u-radius-bottom("sm");
-  border: 1px solid color("primary");
-  color: color("primary");
+  @include uswds-core.u-radius-bottom("sm");
+  border: 1px solid uswds-core.color("primary");
+  color: uswds-core.color("primary");
 }
 
 .usa-collection--condensed {
   .usa-collection__item {
-    @include u-margin-y(1);
-    @include u-padding-top(1);
+    @include uswds-core.u-margin-y(1);
+    @include uswds-core.u-padding-top(1);
   }
 }

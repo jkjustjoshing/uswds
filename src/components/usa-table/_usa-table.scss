@@ -1,3 +1,5 @@
+@use "../../stylesheets/packages/uswds-core";
+
 .usa-table {
   @extend %usa-table;
 }
@@ -15,13 +17,13 @@
 }
 
 .usa-table--stacked {
-  @include at-media-max("mobile-lg") {
+  @include uswds-core.at-media-max("mobile-lg") {
     @include table-stacked-styles;
   }
 }
 
 .usa-table--stacked-header {
-  @include at-media-max("mobile-lg") {
+  @include uswds-core.at-media-max("mobile-lg") {
     @include table-stacked-styles;
     @include table-stacked-header-styles;
   }

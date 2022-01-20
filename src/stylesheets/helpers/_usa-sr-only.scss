@@ -1,3 +1,5 @@
+@use "../packages/uswds-core";
+
 .usa-sr-only {
-  @include sr-only;
+  @include uswds-core.sr-only;
 }

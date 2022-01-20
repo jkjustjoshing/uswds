@@ -1,3 +1,5 @@
+@use "../../stylesheets/packages/uswds-core";
+
 .usa-memorable-date {
   display: flex;
 
@@ -20,18 +22,18 @@
   }
 
   .usa-form-group {
-    margin-top: units(2);
+    margin-top: uswds-core.units(2);
   }
 }
 
 .usa-form-group--day,
 .usa-form-group--month,
 .usa-form-group--year {
-  @include u-flex(auto);
-  margin-right: units(2);
-  width: units(6);
+  @include uswds-core.u-flex(auto);
+  margin-right: uswds-core.units(2);
+  width: uswds-core.units(6);
 }
 
 .usa-form-group--year {
-  width: units(9);
+  width: uswds-core.units(9);
 }

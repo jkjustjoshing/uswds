@@ -1,22 +1,24 @@
+@use "../../stylesheets/packages/uswds-core";
+
 .usa-skipnav {
-  @include border-box-sizing;
-  @include typeset;
-  @include typeset-link;
+  @include uswds-core.border-box-sizing;
+  @include uswds-core.typeset;
+  @include uswds-core.typeset-link;
   background: transparent;
   left: 0;
-  padding: units(1) units(2);
+  padding: uswds-core.units(1) uswds-core.units(2);
   position: absolute;
   top: -3.8rem; // skipnav link height
-  transition: $project-easing;
-  z-index: z-index(100);
+  transition: uswds-core.$project-easing;
+  z-index: uswds-core.z-index(100);
 
   &:focus,
   &.usa-focus {
-    background: color("white");
+    background: uswds-core.color("white");
     left: 0;
     position: absolute;
     top: 0;
-    transition: $project-easing;
+    transition: uswds-core.$project-easing;
   }
 }
 

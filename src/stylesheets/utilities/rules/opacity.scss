@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 opacity
@@ -18,7 +20,7 @@ $u-opacity: (
   opacity: (
     base: "opacity",
     modifiers: null,
-    values: map-collect(get-palettes($opacity-palettes), $opacity-manual-values),
+    values: uswds-core.map-collect(uswds-core.get-palettes($opacity-palettes), $opacity-manual-values),
     settings: $opacity-settings,
     property: "opacity",
     type: "utility",

@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 .top
@@ -20,7 +22,7 @@ $u-top: (
   top: (
     base: "top",
     modifiers: null,
-    values: map-collect(get-palettes($top-palettes), $top-manual-values),
+    values: uswds-core.map-collect(uswds-core.get-palettes($top-palettes), $top-manual-values),
     settings: $top-settings,
     property: "top",
     type: "utility",

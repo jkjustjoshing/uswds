@@ -1,7 +1,9 @@
+@use "../../stylesheets/packages/uswds-core";
+
 .usa-nav-container {
-  @include at-media($theme-header-min-width) {
-    @include clearfix;
-    @include grid-container($theme-header-max-width);
-    @include u-padding-x($theme-site-margins-width);
+  @include uswds-core.at-media($theme-header-min-width) {
+    @include uswds-core.clearfix;
+    @include uswds-core.grid-container($theme-header-max-width);
+    @include uswds-core.u-padding-x($theme-site-margins-width);
   }
 }

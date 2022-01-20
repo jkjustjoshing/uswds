@@ -1,5 +1,7 @@
+@use "../../stylesheets/packages/uswds-core";
+
 .usa-combo-box {
-  max-width: units($theme-input-max-width);
+  max-width: uswds-core.units($theme-input-max-width);
   position: relative;
 }
 
@@ -42,32 +44,32 @@ button.usa-combo-box__clear-input {
 .usa-combo-box__clear-input {
   background-color: transparent;
   background-position: center;
-  background-size: auto units(3);
+  background-size: auto uswds-core.units(3);
   border: 0;
   bottom: 1px;
   cursor: pointer;
   margin-bottom: 0;
   opacity: 0.6;
-  padding-right: units(4);
+  padding-right: uswds-core.units(4);
   position: absolute;
   top: 1px;
-  z-index: z-index(100);
+  z-index: uswds-core.z-index(100);
 }
 
 .usa-combo-box__clear-input {
-  @include add-background-svg("usa-icons/close");
+  @include uswds-core.add-background-svg("usa-icons/close");
   display: none;
   right: calc(2.5em + 3px);
 }
 
 .usa-combo-box__toggle-list {
-  @include add-background-svg("usa-icons/expand_more");
-  background-size: auto units(4);
+  @include uswds-core.add-background-svg("usa-icons/expand_more");
+  background-size: auto uswds-core.units(4);
   right: 1px;
 }
 
 .usa-combo-box__input-button-separator {
-  background-color: color("gray-cool-20");
+  background-color: uswds-core.color("gray-cool-20");
   position: absolute;
   top: 1px;
   margin-bottom: 8px;
@@ -75,13 +77,13 @@ button.usa-combo-box__clear-input {
   width: 1px;
   right: calc(2.5em + 2px);
   box-sizing: border-box;
-  z-index: z-index(200);
+  z-index: uswds-core.z-index(200);
 }
 
 .usa-combo-box__list {
   @extend %block-input-general;
-  @include u-border(1px, "base-dark");
-  background-color: color("white");
+  @include uswds-core.u-border(1px, "base-dark");
+  background-color: uswds-core.color("white");
   border-radius: 0;
   border-top: 0;
   margin: 0;
@@ -91,7 +93,7 @@ button.usa-combo-box__clear-input {
   padding: 0;
   position: absolute;
   width: 100%;
-  z-index: z-index(300);
+  z-index: uswds-core.z-index(300);
 
   &:focus {
     outline: 0;
@@ -99,15 +101,15 @@ button.usa-combo-box__clear-input {
 }
 
 .usa-combo-box__list-option {
-  border-bottom: units(1px) solid color("base-lighter");
+  border-bottom: uswds-core.units(1px) solid uswds-core.color("base-lighter");
   cursor: pointer;
   display: block;
-  padding: units(1);
+  padding: uswds-core.units(1);
 
   &--focused {
-    @include focus-outline($width: 2px, $offset: -2px, $color: "blue-warm-80v");
+    @include uswds-core.focus-outline($width: 2px, $offset: -2px, $color: "blue-warm-80v");
     position: relative;
-    z-index: z-index(100);
+    z-index: uswds-core.z-index(100);
 
     &:focus {
       outline-offset: -4px;
@@ -115,14 +117,14 @@ button.usa-combo-box__clear-input {
   }
 
   &--selected {
-    background-color: color("primary");
-    border-color: color("primary");
-    color: color("white");
+    background-color: uswds-core.color("primary");
+    border-color: uswds-core.color("primary");
+    color: uswds-core.color("white");
   }
 }
 
 .usa-combo-box__list-option--no-results {
   cursor: not-allowed;
   display: block;
-  padding: units(1);
+  padding: uswds-core.units(1);
 }

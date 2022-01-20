@@ -1,3 +1,5 @@
+@use "../../stylesheets/packages/uswds-core";
+
 $tokens-icon-sizes: (
   "3": 3,
   "4": 4,
@@ -20,6 +22,6 @@ $icon-inline-size-magic-number: 1em;
 
 @each $token, $units in $tokens-icon-sizes {
   .usa-icon--size-#{$units} {
-    @include u-square($units);
+    @include uswds-core.u-square($units);
   }
 }

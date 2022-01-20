@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 vertical-align
@@ -19,8 +21,8 @@ $u-vertical-align: (
     base: "text",
     modifiers: null,
     values:
-      map-collect(
-        get-palettes($vertical-align-palettes),
+      uswds-core.map-collect(
+        uswds-core.get-palettes($vertical-align-palettes),
         $vertical-align-manual-values
       ),
     settings: $vertical-align-settings,

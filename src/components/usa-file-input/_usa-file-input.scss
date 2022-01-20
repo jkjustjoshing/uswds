@@ -1,54 +1,56 @@
+@use "../../stylesheets/packages/uswds-core";
+
 [type="file"] {
   border: none;
-  margin-top: units(1);
+  margin-top: uswds-core.units(1);
   padding-left: 0;
   padding-top: 0.2rem; // keeps input vertically centered on error state
 }
 
 .usa-file-input {
   display: block;
-  max-width: units($theme-input-max-width);
+  max-width: uswds-core.units($theme-input-max-width);
   width: 100%;
 }
 
 .usa-file-input__target {
-  border: 1px dashed color("base-light");
+  border: 1px dashed uswds-core.color("base-light");
   display: block;
-  font-size: size("body", "2xs");
-  margin-top: units(1);
+  font-size: uswds-core.size("body", "2xs");
+  margin-top: uswds-core.units(1);
   position: relative;
   text-align: center;
   width: 100%;
 
   &:hover {
-    border-color: color("base");
+    border-color: uswds-core.color("base");
   }
 }
 
 .usa-file-input__target.has-invalid-file {
-  border-color: color("accent-warm");
+  border-color: uswds-core.color("accent-warm");
 }
 
 .usa-file-input__accepted-files-message {
   font-weight: bold;
-  margin: units(-3) 0 units(3);
+  margin: uswds-core.units(-3) 0 uswds-core.units(3);
   pointer-events: none;
   position: relative;
   z-index: 3;
 }
 
 .has-invalid-file .usa-file-input__accepted-files-message {
-  color: color("secondary-dark");
+  color: uswds-core.color("secondary-dark");
 }
 
 .usa-file-input__choose {
-  @include typeset-link;
+  @include uswds-core.typeset-link;
   font-weight: normal;
 }
 
 .usa-file-input__instructions {
   display: inline-block;
-  padding: units(4) units(2);
+  padding: uswds-core.units(4) uswds-core.units(2);
   pointer-events: none;
   position: relative;
   z-index: 3;
@@ -76,7 +78,7 @@
   margin: 0;
   max-width: none;
   position: absolute;
-  padding: units(1);
+  padding: uswds-core.units(1);
   text-indent: -999em;
   top: 0;
   width: 100%;
@@ -88,11 +90,11 @@
 }
 
 .usa-file-input--drag .usa-file-input__target {
-  border-color: color("primary");
+  border-color: uswds-core.color("primary");
 }
 
 .usa-file-input--drag .usa-file-input__box {
-  background-color: color("primary-lighter") !important;
+  background-color: uswds-core.color("primary-lighter") !important;
 }
 
 .usa-file-input--drag .usa-file-input__preview {
@@ -101,11 +103,11 @@
 
 .usa-file-input__preview-heading {
   align-items: center;
-  background: color("primary-lighter");
+  background: uswds-core.color("primary-lighter");
   display: flex;
   font-weight: bold;
   justify-content: space-between;
-  padding: units(1);
+  padding: uswds-core.units(1);
   pointer-events: none;
   position: relative;
   z-index: 3;
@@ -113,36 +115,36 @@
 
 .usa-file-input__preview {
   align-items: center;
-  background: color("primary-lighter");
+  background: uswds-core.color("primary-lighter");
   word-wrap: anywhere;
   display: flex;
-  font-size: size("body", "3xs");
-  margin-top: units(1px);
-  padding: units(0.5) units(1);
+  font-size: uswds-core.size("body", "3xs");
+  margin-top: uswds-core.units(1px);
+  padding: uswds-core.units(0.5) uswds-core.units(1);
   pointer-events: none;
   position: relative;
   text-align: left;
   z-index: 3;
 
   &:last-child {
-    margin-bottom: units(-3);
+    margin-bottom: uswds-core.units(-3);
   }
 }
 
 .usa-file-input__preview-image {
   border: none;
   display: block;
-  height: units(5);
-  margin-right: units(1);
+  height: uswds-core.units(5);
+  margin-right: uswds-core.units(1);
   object-fit: contain;
-  width: units(5);
+  width: uswds-core.units(5);
 }
 
 .usa-file-input__preview-image.is-loading {
-  @include add-background-svg("loader");
+  @include uswds-core.add-background-svg("loader");
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: units(4);
+  background-size: uswds-core.units(4);
 }
 
 .usa-file-input__preview-image--generic,
@@ -152,32 +154,32 @@
 .usa-file-input__preview-image--video {
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: units(3);
+  background-size: uswds-core.units(3);
 }
 
 .usa-file-input__preview-image--pdf {
-  @include add-background-svg("file-pdf");
+  @include uswds-core.add-background-svg("file-pdf");
 }
 
 .usa-file-input__preview-image--generic {
-  @include add-background-svg("file");
+  @include uswds-core.add-background-svg("file");
 }
 
 .usa-file-input__preview-image--word {
-  @include add-background-svg("file-word");
+  @include uswds-core.add-background-svg("file-word");
 }
 
 .usa-file-input__preview-image--excel {
-  @include add-background-svg("file-excel");
+  @include uswds-core.add-background-svg("file-excel");
 }
 
 .usa-file-input__preview-image--video {
-  @include add-background-svg("file-video");
+  @include uswds-core.add-background-svg("file-video");
 }
 
 // Error states
 .usa-form-group--error .usa-file-input__target {
-  border-color: color("secondary-dark");
+  border-color: uswds-core.color("secondary-dark");
   border-width: 2px;
 }
 
@@ -190,7 +192,7 @@
   }
 
   .usa-file-input__box {
-    background-color: color("disabled-light");
+    background-color: uswds-core.color("disabled-light");
   }
 
   .usa-file-input__input[type] {

@@ -1,3 +1,5 @@
+@use "../../stylesheets/packages/uswds-core";
+
 $step-indicator-label-margin-top: 1;
 $step-indicator-margin-bottom: 4;
 $step-indicator-header-margin-top: 4;
@@ -7,18 +9,18 @@ $step-indicator-counter-size: 5;
 $step-indicator-counter-size-sm: 3;
 
 .usa-step-indicator {
-  @include typeset(
+  @include uswds-core.typeset(
     $theme-step-indicator-font-family,
     $theme-step-indicator-label-font-size,
     2
   );
-  background-color: color($step-indicator-background-color);
-  margin-bottom: units($step-indicator-margin-bottom);
-  margin-left: units($theme-step-indicator-segment-gap) / -2;
-  margin-right: units($theme-step-indicator-segment-gap) / -2;
+  background-color: uswds-core.color($step-indicator-background-color);
+  margin-bottom: uswds-core.units($step-indicator-margin-bottom);
+  margin-left: uswds-core.units($theme-step-indicator-segment-gap) / -2;
+  margin-right: uswds-core.units($theme-step-indicator-segment-gap) / -2;
 
-  @include at-media($theme-step-indicator-min-width) {
-    @include u-margin-x(0);
+  @include uswds-core.at-media($theme-step-indicator-min-width) {
+    @include uswds-core.u-margin-x(0);
   }
 }
 
@@ -31,68 +33,68 @@ $step-indicator-counter-size-sm: 3;
 }
 
 .usa-step-indicator__segment {
-  @include u-flex("fill");
+  @include uswds-core.u-flex("fill");
   counter-increment: usa-step-indicator;
-  margin-left: units($theme-step-indicator-segment-gap) / 2;
-  margin-right: units($theme-step-indicator-segment-gap) / 2;
-  max-width: units("card-lg");
-  min-height: units($theme-step-indicator-segment-height);
+  margin-left: uswds-core.units($theme-step-indicator-segment-gap) / 2;
+  margin-right: uswds-core.units($theme-step-indicator-segment-gap) / 2;
+  max-width: uswds-core.units("card-lg");
+  min-height: uswds-core.units($theme-step-indicator-segment-height);
   position: relative;
 
   // Add segment
   &:after {
-    background-color: color($theme-step-indicator-segment-color-pending);
+    background-color: uswds-core.color($theme-step-indicator-segment-color-pending);
     content: "";
     display: block;
     // Use a fixed segment height for mobile regardless of settings
-    height: units($step-indicator-segment-height-mobile);
+    height: uswds-core.units($step-indicator-segment-height-mobile);
     left: 0;
     position: absolute;
     right: 0;
     top: 0;
 
-    @include at-media($theme-step-indicator-min-width) {
-      height: units($theme-step-indicator-segment-height);
+    @include uswds-core.at-media($theme-step-indicator-min-width) {
+      height: uswds-core.units($theme-step-indicator-segment-height);
     }
   }
 }
 
 .usa-step-indicator__segment--complete {
   &::after {
-    background-color: color($theme-step-indicator-segment-color-complete);
+    background-color: uswds-core.color($theme-step-indicator-segment-color-complete);
   }
   .usa-step-indicator__segment-label {
-    color: color($theme-step-indicator-segment-color-complete);
+    color: uswds-core.color($theme-step-indicator-segment-color-complete);
   }
 }
 
 .usa-step-indicator__segment--current {
   &::after {
-    background-color: color($theme-step-indicator-segment-color-current);
+    background-color: uswds-core.color($theme-step-indicator-segment-color-current);
   }
   .usa-step-indicator__segment-label {
-    color: color($theme-step-indicator-segment-color-current);
-    font-weight: fw("bold");
+    color: uswds-core.color($theme-step-indicator-segment-color-current);
+    font-weight: uswds-core.fw("bold");
   }
 }
 
 .usa-step-indicator__segment-label {
   display: none;
   // Show labels only at the min-width
-  @include at-media($theme-step-indicator-min-width) {
-    color: color($theme-step-indicator-text-pending-color);
+  @include uswds-core.at-media($theme-step-indicator-min-width) {
+    color: uswds-core.color($theme-step-indicator-text-pending-color);
     display: block;
-    font-size: size(
+    font-size: uswds-core.size(
       $theme-step-indicator-font-family,
       $theme-step-indicator-label-font-size
     );
     // Add margin based on segment size
     margin-top: calc(
-      #{units($theme-step-indicator-segment-height)} + #{units(
+      #{uswds-core.units($theme-step-indicator-segment-height)} + #{uswds-core.units(
           $step-indicator-label-margin-top
         )}
     );
-    padding-right: units(4);
+    padding-right: uswds-core.units(4);
     text-align: left;
   }
 }
@@ -103,59 +105,59 @@ $step-indicator-counter-size-sm: 3;
 }
 
 .usa-step-indicator__heading {
-  color: color($theme-step-indicator-heading-color);
-  font-family: family($theme-step-indicator-heading-font-family);
-  font-size: size(
+  color: uswds-core.color($theme-step-indicator-heading-color);
+  font-family: uswds-core.family($theme-step-indicator-heading-font-family);
+  font-size: uswds-core.size(
     $theme-step-indicator-heading-font-family,
     $theme-step-indicator-heading-font-size-small
   );
-  font-weight: font-weight("bold");
-  margin: units($step-indicator-header-margin-top-sm) 0 0;
+  font-weight: uswds-core.font-weight("bold");
+  margin: uswds-core.units($step-indicator-header-margin-top-sm) 0 0;
 
-  @include at-media($theme-step-indicator-min-width) {
-    font-size: size(
+  @include uswds-core.at-media($theme-step-indicator-min-width) {
+    font-size: uswds-core.size(
       $theme-step-indicator-heading-font-family,
       $theme-step-indicator-heading-font-size
     );
-    margin-top: units($step-indicator-header-margin-top);
+    margin-top: uswds-core.units($step-indicator-header-margin-top);
   }
 }
 
 .usa-step-indicator__current-step {
-  $step-lh: lh($theme-step-indicator-heading-font-family, 2);
-  @include u-circle($step-indicator-counter-size);
-  @include u-text("normal", "tabular");
-  background-color: color($theme-step-indicator-segment-color-current);
-  color: color($step-indicator-background-color);
+  $step-lh: uswds-core.lh($theme-step-indicator-heading-font-family, 2);
+  @include uswds-core.u-circle($step-indicator-counter-size);
+  @include uswds-core.u-text("normal", "tabular");
+  background-color: uswds-core.color($theme-step-indicator-segment-color-current);
+  color: uswds-core.color($step-indicator-background-color);
   display: inline-block;
   // Magic number circle centering
   padding: calc(
-    (#{units($step-indicator-counter-size)} - (2ex * #{$step-lh})) * 0.5
+    (#{uswds-core.units($step-indicator-counter-size)} - (2ex * #{$step-lh})) * 0.5
   );
   text-align: center;
 }
 
 .usa-step-indicator__total-steps {
-  @include u-text("normal", "tabular");
-  color: color($theme-step-indicator-segment-color-current);
-  margin-right: units(1);
+  @include uswds-core.u-text("normal", "tabular");
+  color: uswds-core.color($theme-step-indicator-segment-color-current);
+  margin-right: uswds-core.units(1);
 }
 
 .usa-step-indicator--counters,
 .usa-step-indicator--counters-sm {
   .usa-step-indicator__segment {
-    @include at-media($theme-step-indicator-min-width) {
-      $counter-lh: lh($theme-step-indicator-font-family, 1);
+    @include uswds-core.at-media($theme-step-indicator-min-width) {
+      $counter-lh: uswds-core.lh($theme-step-indicator-font-family, 1);
       // Remove segment gaps
-      @include u-margin-x(0);
+      @include uswds-core.u-margin-x(0);
 
       // Add extra margin for counter
       @if $theme-step-indicator-counter-gap == 0 {
         margin-top: calc(
           (
             (
-                #{units($step-indicator-counter-size)} -
-                  #{units($theme-step-indicator-segment-height)}
+                #{uswds-core.units($step-indicator-counter-size)} -
+                  #{uswds-core.units($theme-step-indicator-segment-height)}
               ) /
               2
           )
@@ -164,34 +166,34 @@ $step-indicator-counter-size-sm: 3;
         margin-top: calc(
           (
               (
-                  #{units($step-indicator-counter-size)} -
-                    #{units($theme-step-indicator-segment-height)}
+                  #{uswds-core.units($step-indicator-counter-size)} -
+                    #{uswds-core.units($theme-step-indicator-segment-height)}
                 ) /
                 2
             ) +
-            #{units($theme-step-indicator-counter-gap)}
+            #{uswds-core.units($theme-step-indicator-counter-gap)}
         );
       }
 
       // Add counter
       &:before {
-        @include u-circle($step-indicator-counter-size);
-        @include u-text("tabular");
-        background-color: color($step-indicator-background-color);
+        @include uswds-core.u-circle($step-indicator-counter-size);
+        @include uswds-core.u-text("tabular");
+        background-color: uswds-core.color($step-indicator-background-color);
         box-shadow: inset 0 0 0
-            units($theme-step-indicator-counter-border-width)
-            color($theme-step-indicator-segment-color-pending),
-          0 0 0 units($theme-step-indicator-counter-gap)
-            color($step-indicator-background-color);
-        color: color($theme-step-indicator-text-pending-color);
+            uswds-core.units($theme-step-indicator-counter-border-width)
+            uswds-core.color($theme-step-indicator-segment-color-pending),
+          0 0 0 uswds-core.units($theme-step-indicator-counter-gap)
+            uswds-core.color($step-indicator-background-color);
+        color: uswds-core.color($theme-step-indicator-text-pending-color);
         content: counter(usa-step-indicator);
         display: block;
-        font-weight: fw("bold");
+        font-weight: uswds-core.fw("bold");
         left: 0;
-        line-height: lh($theme-step-indicator-font-family, 1);
+        line-height: uswds-core.lh($theme-step-indicator-font-family, 1);
         // Magic number circle centering
         padding: calc(
-          (#{units($step-indicator-counter-size)} - (2ex * #{$counter-lh})) *
+          (#{uswds-core.units($step-indicator-counter-size)} - (2ex * #{$counter-lh})) *
             0.5
         );
         // padding: 1.5ex;
@@ -199,12 +201,12 @@ $step-indicator-counter-size-sm: 3;
         text-align: center;
         top: calc(
           (
-              #{units($step-indicator-counter-size)} - #{units(
+              #{uswds-core.units($step-indicator-counter-size)} - #{uswds-core.units(
                   $theme-step-indicator-segment-height
                 )}
             ) / -2
         );
-        z-index: z(100);
+        z-index: uswds-core.z(100);
       }
 
       &:last-child {
@@ -218,40 +220,40 @@ $step-indicator-counter-size-sm: 3;
 
   .usa-step-indicator__segment--complete {
     &::before {
-      background-color: color($theme-step-indicator-segment-color-complete);
-      box-shadow: 0 0 0 units($theme-step-indicator-counter-gap)
-        color($step-indicator-background-color);
-      color: color($step-indicator-background-color);
+      background-color: uswds-core.color($theme-step-indicator-segment-color-complete);
+      box-shadow: 0 0 0 uswds-core.units($theme-step-indicator-counter-gap)
+        uswds-core.color($step-indicator-background-color);
+      color: uswds-core.color($step-indicator-background-color);
     }
   }
 
   .usa-step-indicator__segment--current {
     &::before {
-      background-color: color($theme-step-indicator-segment-color-current);
-      box-shadow: 0 0 0 units($theme-step-indicator-counter-gap)
-        color($step-indicator-background-color);
-      color: color($step-indicator-background-color);
+      background-color: uswds-core.color($theme-step-indicator-segment-color-current);
+      box-shadow: 0 0 0 uswds-core.units($theme-step-indicator-counter-gap)
+        uswds-core.color($step-indicator-background-color);
+      color: uswds-core.color($step-indicator-background-color);
     }
   }
 
   .usa-step-indicator__segment-label {
-    @include at-media($theme-step-indicator-min-width) {
+    @include uswds-core.at-media($theme-step-indicator-min-width) {
       // Add counter margin
       margin-top: calc(
         (
             (
-                #{units($step-indicator-counter-size)} + #{units(
+                #{uswds-core.units($step-indicator-counter-size)} + #{uswds-core.units(
                     $theme-step-indicator-segment-height
                   )}
               ) / 2
-          ) + #{units($step-indicator-label-margin-top)}
+          ) + #{uswds-core.units($step-indicator-label-margin-top)}
       );
     }
   }
 
   // Adjust segments with centered variant
   &.usa-step-indicator--center {
-    @include at-media($theme-step-indicator-min-width) {
+    @include uswds-core.at-media($theme-step-indicator-min-width) {
       .usa-step-indicator__segment {
         &:first-child {
           &:after {
@@ -276,15 +278,15 @@ $step-indicator-counter-size-sm: 3;
 
 .usa-step-indicator--counters-sm {
   .usa-step-indicator__segment {
-    @include at-media($theme-step-indicator-min-width) {
-      $counter-lh: lh($theme-step-indicator-font-family, 1);
+    @include uswds-core.at-media($theme-step-indicator-min-width) {
+      $counter-lh: uswds-core.lh($theme-step-indicator-font-family, 1);
       // Add extra margin for counter
       @if $theme-step-indicator-counter-gap == 0 {
         margin-top: calc(
           (
             (
-                #{units($step-indicator-counter-size-sm)} -
-                  #{units($theme-step-indicator-segment-height)}
+                #{uswds-core.units($step-indicator-counter-size-sm)} -
+                  #{uswds-core.units($theme-step-indicator-segment-height)}
               ) /
               2
           )
@@ -293,23 +295,23 @@ $step-indicator-counter-size-sm: 3;
         margin-top: calc(
           (
               (
-                  #{units($step-indicator-counter-size-sm)} -
-                    #{units($theme-step-indicator-segment-height)}
+                  #{uswds-core.units($step-indicator-counter-size-sm)} -
+                    #{uswds-core.units($theme-step-indicator-segment-height)}
                 ) /
                 2
             ) +
-            #{units($theme-step-indicator-counter-gap)}
+            #{uswds-core.units($theme-step-indicator-counter-gap)}
         );
       }
 
       // Add counter
       &:before {
-        @include u-circle($step-indicator-counter-size-sm);
-        @include u-font-size($theme-step-indicator-font-family, 3);
-        padding: calc(#{units(0.5)} + 1px);
+        @include uswds-core.u-circle($step-indicator-counter-size-sm);
+        @include uswds-core.u-font-size($theme-step-indicator-font-family, 3);
+        padding: calc(#{uswds-core.units(0.5)} + 1px);
         top: calc(
           (
-              #{units($step-indicator-counter-size-sm)} - #{units(
+              #{uswds-core.units($step-indicator-counter-size-sm)} - #{uswds-core.units(
                   $theme-step-indicator-segment-height
                 )}
             ) / -2
@@ -326,31 +328,31 @@ $step-indicator-counter-size-sm: 3;
   }
 
   .usa-step-indicator__segment-label {
-    @include at-media($theme-step-indicator-min-width) {
+    @include uswds-core.at-media($theme-step-indicator-min-width) {
       // Add counter margin
       margin-top: calc(
         (
             (
-                #{units($step-indicator-counter-size-sm)} + #{units(
+                #{uswds-core.units($step-indicator-counter-size-sm)} + #{uswds-core.units(
                     $theme-step-indicator-segment-height
                   )}
               ) / 2
-          ) + #{units($step-indicator-label-margin-top)}
+          ) + #{uswds-core.units($step-indicator-label-margin-top)}
       );
     }
   }
 }
 
 .usa-step-indicator--no-labels {
-  margin-left: units($theme-step-indicator-segment-gap) / -2;
-  margin-right: units($theme-step-indicator-segment-gap) / -2;
+  margin-left: uswds-core.units($theme-step-indicator-segment-gap) / -2;
+  margin-right: uswds-core.units($theme-step-indicator-segment-gap) / -2;
 
   .usa-step-indicator__segment {
     // Remove extra counter margin
     margin-top: 0;
     // Add gap between segments
-    margin-left: units($theme-step-indicator-segment-gap) / 2;
-    margin-right: units($theme-step-indicator-segment-gap) / 2;
+    margin-left: uswds-core.units($theme-step-indicator-segment-gap) / 2;
+    margin-right: uswds-core.units($theme-step-indicator-segment-gap) / 2;
 
     &:before {
       // Don't show counters
@@ -366,7 +368,7 @@ $step-indicator-counter-size-sm: 3;
   }
 
   .usa-step-indicator__heading {
-    margin-top: units($step-indicator-header-margin-top-sm);
+    margin-top: uswds-core.units($step-indicator-header-margin-top-sm);
   }
 }
 
@@ -378,23 +380,23 @@ $step-indicator-counter-size-sm: 3;
 }
 
 .usa-step-indicator--center {
-  margin-left: units($theme-step-indicator-segment-gap) / -2;
-  margin-right: units($theme-step-indicator-segment-gap) / -2;
+  margin-left: uswds-core.units($theme-step-indicator-segment-gap) / -2;
+  margin-right: uswds-core.units($theme-step-indicator-segment-gap) / -2;
 
   .usa-step-indicator__segment {
-    margin-left: units($theme-step-indicator-segment-gap) / 2;
-    margin-right: units($theme-step-indicator-segment-gap) / 2;
+    margin-left: uswds-core.units($theme-step-indicator-segment-gap) / 2;
+    margin-right: uswds-core.units($theme-step-indicator-segment-gap) / 2;
 
     &:before {
       @if $theme-step-indicator-counter-gap == 0 {
-        left: calc(50% - ((#{units($step-indicator-counter-size)}) / 2));
+        left: calc(50% - ((#{uswds-core.units($step-indicator-counter-size)}) / 2));
       } @else {
         left: calc(
           50% -
             (
               (
-                  #{units($step-indicator-counter-size)} +
-                    #{units($theme-step-indicator-counter-gap)}
+                  #{uswds-core.units($step-indicator-counter-size)} +
+                    #{uswds-core.units($theme-step-indicator-counter-gap)}
                 ) /
                 2
             )
@@ -405,7 +407,7 @@ $step-indicator-counter-size-sm: 3;
 
   .usa-step-indicator__segment-label {
     // Balance label padding
-    @include u-padding-x(1);
+    @include uswds-core.u-padding-x(1);
     // Center labels
     text-align: center;
   }
@@ -431,14 +433,14 @@ $step-indicator-counter-size-sm: 3;
     .usa-step-indicator__segment {
       &:before {
         @if $theme-step-indicator-counter-gap == 0 {
-          left: calc(50% - ((#{units($step-indicator-counter-size-sm)}) / 2));
+          left: calc(50% - ((#{uswds-core.units($step-indicator-counter-size-sm)}) / 2));
         } @else {
           left: calc(
             50% -
               (
                 (
-                    #{units($step-indicator-counter-size-sm)} +
-                      #{units($theme-step-indicator-counter-gap)}
+                    #{uswds-core.units($step-indicator-counter-size-sm)} +
+                      #{uswds-core.units($theme-step-indicator-counter-gap)}
                   ) /
                   2
               )

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,IAAI,CAAJ,qBAAI;AACJ,IAAI,CAAJ,qDAAI",
+    "sources": [
+        "shortcodes-color-system.scss"
+    ],
+    "names": [],
+    "file": "shortcodes-color-system.css"
+}

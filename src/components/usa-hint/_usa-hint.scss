@@ -1,8 +1,10 @@
+@use "../../stylesheets/packages/uswds-core";
+
 .usa-hint {
   @extend %block-input-general;
-  color: color("base");
+  color: uswds-core.color("base");
 }
 
 .usa-hint--required {
-  color: color("error-dark");
+  color: uswds-core.color("error-dark");
 }

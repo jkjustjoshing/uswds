@@ -1,35 +1,39 @@
+@use "sass:color";
+@use "sass:list";
+@use "../../stylesheets/packages/uswds-core";
+
 $pagination-context: "Pagination";
 $pagination-margin-x: 0.5 !default;
 $pagination-margin-y: 2 !default;
 $pagination-margin-padding: 1 !default;
 $pagination-target-size: 5 !default;
 
-$pagination-current-color: get-color-token-from-bg(
+$pagination-current-color: uswds-core.get-color-token-from-bg(
   $theme-pagination-background-color
 );
-$pagination-link-tokens: get-link-tokens-from-bg(
+$pagination-link-tokens: uswds-core.get-link-tokens-from-bg(
   $theme-pagination-background-color,
   $theme-link-reverse-color,
   $theme-link-color,
   $context: $pagination-context
 );
 
-$pagination-link-token: nth($pagination-link-tokens, 1);
-$pagination-hover-token: nth($pagination-link-tokens, 2);
+$pagination-link-token: list.nth($pagination-link-tokens, 1);
+$pagination-hover-token: list.nth($pagination-link-tokens, 2);
 
 // Pagination
 // ---------------------------------
 .usa-pagination {
-  @include u-margin-y($pagination-margin-y);
-  @include typeset($theme-pagination-font-family);
+  @include uswds-core.u-margin-y($pagination-margin-y);
+  @include uswds-core.typeset($theme-pagination-font-family);
   display: flex;
   justify-content: center;
 }
 
 // TODO: Pull out magic number into vars? Could this better?
 .usa-pagination .usa-icon {
-  height: px-to-rem(18px);
-  width: px-to-rem(18px);
+  height: uswds-core.px-to-rem(18px);
+  width: uswds-core.px-to-rem(18px);
 }
 
 // Shared styles
@@ -38,7 +42,7 @@ $pagination-hover-token: nth($pagination-link-tokens, 2);
 // Pagination nav
 // ---------------------------------
 .usa-pagination__list {
-  @include add-list-reset;
+  @include uswds-core.add-list-reset;
   align-items: center;
   display: flex;
   flex-flow: row nowrap;
@@ -50,14 +54,14 @@ $pagination-hover-token: nth($pagination-link-tokens, 2);
 // 1. Prevents chromium browsers from adding additional vertical whitespace
 .usa-pagination__item {
   display: inline-flex; // 1
-  height: units($pagination-target-size);
+  height: uswds-core.units($pagination-target-size);
   justify-content: center;
   line-height: 1;
-  margin-left: units($pagination-margin-x);
-  margin-right: units($pagination-margin-x);
-  min-width: units($pagination-target-size);
+  margin-left: uswds-core.units($pagination-margin-x);
+  margin-right: uswds-core.units($pagination-margin-x);
+  min-width: uswds-core.units($pagination-target-size);
 
-  @include at-media($theme-pagination-breakpoint) {
+  @include uswds-core.at-media($theme-pagination-breakpoint) {
     flex: 1 0 auto; // flex: 1 won't work in IE11
   }
 }
@@ -66,26 +70,26 @@ $pagination-hover-token: nth($pagination-link-tokens, 2);
 // Functionality exists with page buttons.
 .usa-pagination__arrow {
   display: none;
-  @include at-media($theme-pagination-breakpoint) {
+  @include uswds-core.at-media($theme-pagination-breakpoint) {
     display: inherit;
   }
 }
 
 .usa-pagination__previous-page {
-  @include at-media($theme-pagination-breakpoint) {
-    margin-right: units($pagination-target-size / 2);
+  @include uswds-core.at-media($theme-pagination-breakpoint) {
+    margin-right: uswds-core.units($pagination-target-size / 2);
   }
 }
 
 .usa-pagination__next-page {
-  @include at-media($theme-pagination-breakpoint) {
-    margin-left: units($pagination-target-size / 2);
+  @include uswds-core.at-media($theme-pagination-breakpoint) {
+    margin-left: uswds-core.units($pagination-target-size / 2);
   }
 }
 
 .usa-pagination__link {
   align-items: center;
-  color: color($pagination-link-token);
+  color: uswds-core.color($pagination-link-token);
   display: inline-flex;
   text-decoration: none;
 
@@ -97,33 +101,33 @@ $pagination-hover-token: nth($pagination-link-tokens, 2);
   &:hover,
   &:focus,
   &:active {
-    color: color($pagination-hover-token);
+    color: uswds-core.color($pagination-hover-token);
     text-decoration: underline;
   }
 
   &:visited {
-    color: color($pagination-link-token);
+    color: uswds-core.color($pagination-link-token);
   }
 }
 
 .usa-pagination__button {
   align-items: center;
-  border-color: adjust-color(color($pagination-current-color), $alpha: -0.8);
-  border-radius: radius($theme-pagination-button-border-radius);
+  border-color: color.adjust(uswds-core.color($pagination-current-color), $alpha: -0.8);
+  border-radius: uswds-core.radius($theme-pagination-button-border-radius);
   border-style: solid;
-  border-width: units($theme-pagination-button-border-width);
-  color: color($pagination-link-token);
+  border-width: uswds-core.units($theme-pagination-button-border-width);
+  color: uswds-core.color($pagination-link-token);
   display: inline-flex;
   justify-content: center;
-  padding: units($pagination-margin-padding);
+  padding: uswds-core.units($pagination-margin-padding);
   text-decoration: none;
   width: 100%;
 
   &:hover,
   &:focus,
   &:active {
-    color: color($pagination-hover-token);
-    border-color: color($pagination-hover-token);
+    color: uswds-core.color($pagination-hover-token);
+    border-color: uswds-core.color($pagination-hover-token);
   }
 }
 
@@ -133,15 +137,15 @@ $pagination-hover-token: nth($pagination-link-tokens, 2);
     $theme-body-background-color,
     $theme-pagination-background-color
   );
-  background-color: color($pagination-current-color);
+  background-color: uswds-core.color($pagination-current-color);
   border-color: transparent;
-  color: color($text-color);
+  color: uswds-core.color($text-color);
 
   &:hover,
   &:focus,
   &:active {
-    background-color: color($pagination-current-color);
-    color: color($text-color);
+    background-color: uswds-core.color($pagination-current-color);
+    color: uswds-core.color($text-color);
     text-decoration: none;
   }
 }
@@ -151,7 +155,7 @@ $pagination-hover-token: nth($pagination-link-tokens, 2);
   align-self: stretch;
   display: inherit;
   user-select: none;
-  padding: units($pagination-margin-padding);
+  padding: uswds-core.units($pagination-margin-padding);
   opacity: 0.5;
 }
 

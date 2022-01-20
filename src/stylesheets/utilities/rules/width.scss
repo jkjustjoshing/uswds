@@ -1,3 +1,5 @@
+@use "../../packages/uswds-core";
+
 /*
 ========================================
 width
@@ -18,7 +20,7 @@ $u-width: (
   width: (
     base: "width",
     modifiers: null,
-    values: map-collect(get-palettes($width-palettes), $width-manual-values),
+    values: uswds-core.map-collect(uswds-core.get-palettes($width-palettes), $width-manual-values),
     settings: $width-settings,
     property: "width",
     type: "utility",

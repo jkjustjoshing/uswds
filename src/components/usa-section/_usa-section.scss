@@ -1,19 +1,21 @@
-.usa-section {
-  @include border-box-sizing;
-  @include u-padding-y($theme-site-margins-width);
+@use "../../stylesheets/packages/uswds-core";
 
-  @include at-media("tablet") {
-    @include u-padding-y(8);
+.usa-section {
+  @include uswds-core.border-box-sizing;
+  @include uswds-core.u-padding-y($theme-site-margins-width);
+
+  @include uswds-core.at-media("tablet") {
+    @include uswds-core.u-padding-y(8);
   }
 }
 
 .usa-section--light {
-  background-color: color("base-lightest");
+  background-color: uswds-core.color("base-lightest");
 }
 
 .usa-section--dark {
-  background-color: color("primary-darker");
-  color: color($theme-text-reverse-color);
+  background-color: uswds-core.color("primary-darker");
+  color: uswds-core.color($theme-text-reverse-color);
 
   h1,
   h2,
@@ -23,22 +25,22 @@
   h6 {
     // TODO: This should use a theme-able color,
     // and should probably default to white
-    color: color("accent-cool");
+    color: uswds-core.color("accent-cool");
   }
 
   p {
-    color: color($theme-text-reverse-color);
+    color: uswds-core.color($theme-text-reverse-color);
   }
 
   a {
-    color: color($theme-link-reverse-color);
+    color: uswds-core.color($theme-link-reverse-color);
 
     &:hover {
-      color: color($theme-link-reverse-hover-color);
+      color: uswds-core.color($theme-link-reverse-hover-color);
     }
 
     &:active {
-      color: color($theme-link-reverse-active-color);
+      color: uswds-core.color($theme-link-reverse-active-color);
     }
   }
 }
