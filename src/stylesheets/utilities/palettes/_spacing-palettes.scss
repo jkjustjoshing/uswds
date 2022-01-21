@@ -71,18 +71,6 @@ $tokens-units-zero: (
 $palettes-units: (
   "palette-units-system":
     map-collect(
-<<<<<<< HEAD
-      map-get($system-spacing, small-negative),
-      map-get($system-spacing, smaller-negative),
-      map-get($system-spacing, medium-negative),
-      map-get($system-spacing, smaller),
-      map-get($system-spacing, medium-negative),
-      map-get($system-spacing, small),
-      map-get($system-spacing, medium),
-      map-get($system-spacing, large),
-      map-get($system-spacing, larger),
-      map-get($system-spacing, largest)
-=======
       map.get($system-spacing, small-negative),
       map.get($system-spacing, smaller-negative),
       map.get($system-spacing, smaller),
@@ -92,7 +80,6 @@ $palettes-units: (
       map.get($system-spacing, large),
       map.get($system-spacing, larger),
       map.get($system-spacing, largest)
->>>>>>> f0d03c336984059f94fcf3ec9753ca0dc181467b
     ),
   "palette-units-system-positive":
     map-collect(
@@ -138,17 +125,6 @@ $palettes-units-misc: (
   "palette-units-zero": $tokens-units-zero,
   "palette-units":
     map-collect(
-<<<<<<< HEAD
-      map-get($system-spacing, small-negative),
-      map-get($system-spacing, smaller-negative),
-      map-get($system-spacing, smaller),
-      map-get($system-spacing, small),
-      map-get($system-spacing, medium-negative),
-      map-get($system-spacing, medium),
-      map-get($system-spacing, large),
-      map-get($system-spacing, larger),
-      map-get($system-spacing, largest),
-=======
       map.get($system-spacing, small-negative),
       map.get($system-spacing, smaller-negative),
       map.get($system-spacing, smaller),
@@ -157,7 +133,6 @@ $palettes-units-misc: (
       map.get($system-spacing, large),
       map.get($system-spacing, larger),
       map.get($system-spacing, largest),
->>>>>>> f0d03c336984059f94fcf3ec9753ca0dc181467b
       $tokens-units-ch-positive,
       $tokens-units-ch-negative,
       $tokens-units-em,
