@@ -1,3 +1,4 @@
+@use "sass:map";
 $alert-slim-icon-size: units(3);
 $alert-icon-optical-factor: units($theme-alert-icon-size) / 6;
 $alert-icon-optical-padding: units($theme-alert-padding-x) -
@@ -14,7 +15,7 @@ $alert-icon-optical-padding: units($theme-alert-padding-x) -
   }
 }
 @mixin add-alert-icon($name, $color, $bgcolor) {
-  $this-icon-object: map-merge(
+  $this-icon-object: map.merge(
     $icon-object,
     (
       "name": $name,

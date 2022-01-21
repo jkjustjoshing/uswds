@@ -1,6 +1,8 @@
+@use "../usa-alert/usa-alert";
+
 // Alert variables ---------- //
 
-$alert-icons: (
+usa-alert.$alert-icons: (
   info: "info",
   emergency: "error",
 );
@@ -36,7 +38,7 @@ $alert-icons: (
   }
 }
 
-@each $name, $icon in $alert-icons {
+@each $name, $icon in usa-alert.$alert-icons {
   .usa-site-alert--#{$name} {
     $bgcolor: if($name != "emergency", "#{$name}-lighter", $name);
     @include set-text-and-bg($bgcolor);
@@ -78,14 +80,14 @@ $alert-icons: (
 
 .usa-site-alert--slim {
   .usa-alert {
-    @include add-slim-alert-icon;
+    @include usa-alert.add-slim-alert-icon;
     @include u-padding-y(1);
   }
   .usa-alert__body {
     padding-left: units($theme-site-margins-mobile-width) +
-      $alert-slim-icon-size + units(1.5);
+      usa-alert.$alert-slim-icon-size + units(1.5);
     @include at-media($theme-site-margins-breakpoint) {
-      padding-left: units($theme-site-margins-width) + $alert-slim-icon-size +
+      padding-left: units($theme-site-margins-width) + usa-alert.$alert-slim-icon-size +
         units(1.5);
     }
   }
