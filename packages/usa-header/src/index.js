@@ -79,15 +79,13 @@ const toggleNonNavItems = (active) => {
   }
 };
 
-const animateClose = (el) => {
-  el.classList.add(CLOSING_CLASS);
-  const cleanup = () => {
-    if (el.classList.contains(CLOSING_CLASS)) {
-      el.classList.remove(CLOSING_CLASS);
-      el.classList.remove(VISIBLE_CLASS);
-    }
-  };
-
+const animationCleanup = (event) => {
+  if (event.target.matches(TOGGLES) && event.target.classList.contains(CLOSING_CLASS)) {
+    event.target.classList.remove(CLOSING_CLASS);
+    event.target.classList.remove(VISIBLE_CLASS);
+  }
+};
+const animationCleanupListeners = (setup) => {
   const events = [
     "transitionend",
     "animationend",
@@ -95,11 +93,11 @@ const animateClose = (el) => {
     "transitioncancel",
     "animationcancel",
   ];
-  const callback = () => {
-    cleanup();
-    events.forEach((e) => el.removeEventListener(e, callback));
-  };
-  events.forEach((e) => el.addEventListener(e, callback));
+  if (setup) {
+    events.forEach((e) => window.addEventListener(e, animationCleanup));
+  } else {
+    events.forEach((e) => window.removeEventListener(e, animationCleanup));
+  }
 };
 
 const toggleNav = (active) => {
@@ -117,7 +115,7 @@ const toggleNav = (active) => {
       parseFloat(computedStyle.animationDuration, 10) ||
       parseFloat(computedStyle.transitionDuration);
     if (duration !== 0 && !safeActive) {
-      animateClose(el);
+      el.classList.add(CLOSING_CLASS);
     } else {
       // Nav is opening, OR the nav close duration is 0ms.
       // If the close duration is 0ms, then the end/cancel
@@ -262,9 +260,11 @@ navigation = behavior(
 
       resize();
       window.addEventListener("resize", resize, false);
+      animationCleanupListeners(true);
     },
     teardown() {
       window.removeEventListener("resize", resize, false);
+      animationCleanupListeners(false);
       navActive = false;
     },
     focusTrap: null,
